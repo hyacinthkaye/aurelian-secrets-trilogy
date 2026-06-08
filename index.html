@@ -1,0 +1,3588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Aurelian Secrets of Selene — Whose Blood Built the Bridge</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Share+Tech+Mono&family=Cinzel:wght@400;700;900&display=swap" rel="stylesheet" />
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          obsidian: '#0A0A0C',
+          'obsidian-mid': '#0F0F12',
+          'obsidian-light': '#16161C',
+          'aurelian-gold': '#C9A84C',
+          'aurelian-gold-dim': '#8A6E2F',
+          'emerald-curse': '#2D6B4A',
+          'emerald-bright': '#4A9B6E',
+          'blood-deep': '#2D0B0B',
+          'blood-mid': '#660000',
+          'blood-bright': '#8B1A1A',
+          'solarian-warm': '#D4A855',
+          'parchment': '#C8B89A',
+          'parchment-dim': '#8A7A62',
+        },
+        fontFamily: {
+          'serif-display': ['Cinzel', 'serif'],
+          'serif-body': ['Cormorant Garamond', 'serif'],
+          'serif-fell': ['IM Fell English', 'serif'],
+          'mono': ['Share Tech Mono', 'monospace'],
+        }
+      }
+    }
+  }
+</script>
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2414554');
+</script>
+<!-- End MailerLite Universal -->
+<style>
+  :root {
+    --gold: #C9A84C;
+    --gold-dim: #8A6E2F;
+    --blood: #660000;
+    --blood-deep: #2D0B0B;
+    --emerald: #2D6B4A;
+    --parchment: #C8B89A;
+    --obsidian: #0A0A0C;
+    --glow-gold: rgba(201,168,76,0.15);
+    --glow-blood: rgba(102,0,0,0.2);
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background-color: var(--obsidian);
+    color: var(--parchment);
+    font-family: 'Cormorant Garamond', serif;
+    overflow-x: hidden;
+    padding-bottom: 58px;
+    cursor: default;
+  }
+
+  /* Grain overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+    opacity: 0.035;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  /* Typography */
+  .title-display { font-family: 'Cinzel', serif; letter-spacing: 0.12em; }
+  .title-body { font-family: 'Cormorant Garamond', serif; }
+  .title-fell { font-family: 'IM Fell English', serif; }
+  .title-mono { font-family: 'Share Tech Mono', monospace; }
+
+  /* Dividers */
+  .blood-rule {
+    border: none;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--blood) 30%, var(--gold-dim) 50%, var(--blood) 70%, transparent 100%);
+  }
+
+  /* Glassmorphism panel */
+  .glass-panel {
+    background: rgba(15,15,18,0.72);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(201,168,76,0.18);
+  }
+
+  /* Gold glow effect */
+  .glow-gold {
+    box-shadow: 0 0 40px var(--glow-gold), 0 0 80px rgba(201,168,76,0.07);
+  }
+
+  /* Blood glow */
+  .glow-blood {
+    box-shadow: 0 0 60px var(--glow-blood);
+  }
+
+  /* Redacted text */
+  .redacted {
+    background: #111;
+    color: transparent;
+    border-radius: 2px;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    user-select: none;
+    display: inline;
+  }
+  .redacted:hover, .redacted.revealed {
+    background: transparent;
+    color: var(--parchment);
+  }
+
+  /* Hero section */
+  #hero {
+    position: relative;
+    min-height: 100vh;
+    background-image: url('banner.png');
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+  #hero::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(10,10,12,0.25) 0%,
+      rgba(10,10,12,0.1) 30%,
+      rgba(10,10,12,0.6) 70%,
+      rgba(10,10,12,0.98) 100%
+    );
+  }
+
+  /* CTA Button */
+  .cta-btn {
+    position: relative;
+    display: inline-block;
+    padding: 14px 40px;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    overflow: hidden;
+    background: rgba(10,10,12,0.6);
+  }
+  .cta-btn::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    transform: translateX(-101%);
+    transition: transform 0.4s ease;
+    z-index: -1;
+  }
+  .cta-btn:hover {
+    color: var(--obsidian);
+  }
+  .cta-btn:hover::before { transform: translateX(0); }
+
+  /* River of Blood parallax divider */
+  .river-divider {
+    position: relative;
+    height: 90px;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .river-inner {
+    position: absolute;
+    top: -40px; left: 0; right: 0;
+    height: calc(100% + 80px);
+    will-change: transform;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0;
+  }
+  .river-stream {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(102,0,0,0.0) 5%,
+      rgba(139,26,26,0.5) 30%,
+      rgba(180,20,20,0.8) 50%,
+      rgba(139,26,26,0.5) 70%,
+      rgba(102,0,0,0.0) 95%,
+      transparent 100%
+    );
+  }
+  .river-stream.mid {
+    margin: 6px 0;
+    background: linear-gradient(90deg,
+      transparent 0%,
+      rgba(45,11,11,0.0) 10%,
+      rgba(102,0,0,0.35) 35%,
+      rgba(139,26,26,0.6) 50%,
+      rgba(102,0,0,0.35) 65%,
+      rgba(45,11,11,0.0) 90%,
+      transparent 100%
+    );
+    height: 3px;
+    filter: blur(1px);
+  }
+  .river-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Cinzel', serif;
+    font-size: 0.55rem;
+    letter-spacing: 0.35em;
+    color: rgba(139,26,26,0.6);
+    text-transform: uppercase;
+    white-space: nowrap;
+    background: var(--obsidian);
+    padding: 0 16px;
+  }
+
+  .river-divider + section {
+    margin-top: -8px;
+  }
+
+  .shelf-intro-note {
+    text-align: center;
+    margin: -24px 0 28px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    color: rgba(201,168,76,0.64);
+    text-transform: uppercase;
+  }
+
+  .optional-scan-badge {
+    display: inline-block;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    border: 1px solid rgba(201,168,76,0.22);
+    color: rgba(201,168,76,0.7);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    background: rgba(10,10,12,0.45);
+  }
+
+  .gate-privacy-note {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    color: rgba(200,184,154,0.38);
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .conversion-strip {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 22px;
+    margin: 0 auto 34px;
+    padding: 20px 24px;
+    border: 1px solid rgba(201,168,76,0.22);
+    background:
+      linear-gradient(90deg, rgba(201,168,76,0.08), rgba(10,10,12,0.62), rgba(102,0,0,0.08)),
+      rgba(10,10,12,0.72);
+    box-shadow: 0 22px 70px rgba(0,0,0,0.34);
+  }
+
+  .conversion-strip p {
+    margin: 0;
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    color: rgba(200,184,154,0.68);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .conversion-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .mobile-section-nav {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    nav {
+      padding: 14px 18px !important;
+      align-items: center !important;
+      gap: 12px;
+      background: rgba(8,8,10,0.96) !important;
+      border-bottom: 1px solid rgba(201,168,76,0.12);
+    }
+
+    nav > span {
+      max-width: 52vw;
+      line-height: 1.55;
+    }
+
+    nav > div:nth-child(2) {
+      display: none !important;
+    }
+
+    nav .cta-btn {
+      padding: 8px 12px !important;
+      font-size: 0.5rem !important;
+      letter-spacing: 0.16em !important;
+      white-space: nowrap;
+    }
+
+    .mobile-section-nav {
+      position: fixed;
+      top: 64px;
+      left: 0;
+      right: 0;
+      z-index: 49;
+      display: flex;
+      gap: 10px;
+      overflow-x: auto;
+      padding: 9px 16px 10px;
+      border-bottom: 1px solid rgba(201,168,76,0.1);
+      background: rgba(8,8,10,0.88);
+      backdrop-filter: blur(10px);
+      scrollbar-width: none;
+    }
+
+    .mobile-section-nav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .mobile-section-nav a {
+      flex: 0 0 auto;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.16em;
+      color: rgba(200,184,154,0.52);
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1px solid rgba(201,168,76,0.14);
+      padding: 7px 10px;
+      background: rgba(10,10,12,0.66);
+    }
+
+    .mobile-section-nav a:active {
+      color: var(--gold);
+      border-color: rgba(201,168,76,0.38);
+    }
+
+    #hero {
+      min-height: 92vh;
+      background-attachment: scroll;
+      background-position: center top;
+    }
+
+    #hero > div {
+      padding-bottom: 72px !important;
+      padding-top: 118px;
+    }
+
+    .river-divider {
+      height: 64px;
+    }
+
+    .river-label {
+      font-size: 0.46rem;
+      letter-spacing: 0.22em;
+      padding: 0 10px;
+    }
+
+    section {
+      scroll-margin-top: 120px;
+    }
+
+    section:not(#hero) {
+      padding-top: 72px !important;
+      padding-bottom: 72px !important;
+    }
+
+    .glass-panel {
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .conversion-strip {
+      flex-direction: column;
+      align-items: stretch;
+      text-align: center;
+      padding: 18px;
+      margin-bottom: 26px;
+    }
+
+    .conversion-actions {
+      justify-content: center;
+    }
+
+    .conversion-actions .cta-btn {
+      width: 100%;
+      text-align: center;
+      padding-left: 14px !important;
+      padding-right: 14px !important;
+    }
+
+    .old-shelf {
+      padding: 1.25rem !important;
+    }
+
+    .shelf-book {
+      transform: none !important;
+    }
+
+    .dashboard-img-zone {
+      overflow-x: auto;
+    }
+
+    .map-hotspot-ring {
+      width: 20px;
+      height: 20px;
+    }
+
+    .lore-tooltip {
+      display: none;
+    }
+
+    #concord-bar {
+      height: 40px;
+      padding: 0 12px;
+      gap: 10px;
+    }
+
+    #concord-text {
+      font-size: 0.48rem;
+      letter-spacing: 0.14em;
+      text-align: center;
+      line-height: 1.4;
+    }
+  }
+
+  /* Map section */
+  .map-container {
+    position: relative;
+    border: 1px solid rgba(201,168,76,0.3);
+    overflow: hidden;
+  }
+  .map-container img { display: block; width: 100%; }
+
+  /* Map hotspots */
+  .map-hotspot {
+    position: absolute;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .map-hotspot-ring {
+    width: 24px; height: 24px;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    animation: pulse-ring 2.5s infinite;
+    background: rgba(201,168,76,0.1);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .map-hotspot-ring::after {
+    content: '';
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+  @keyframes pulse-ring {
+    0%,100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+    50% { box-shadow: 0 0 0 8px rgba(201,168,76,0); }
+  }
+
+  .lore-tooltip {
+    position: absolute;
+    bottom: 110%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 220px;
+    background: rgba(10,10,12,0.95);
+    border: 1px solid rgba(201,168,76,0.35);
+    padding: 12px 16px;
+    font-family: 'IM Fell English', serif;
+    font-size: 0.82rem;
+    font-style: italic;
+    color: var(--parchment);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    line-height: 1.6;
+    z-index: 20;
+    backdrop-filter: blur(12px);
+    text-align: center;
+  }
+  .lore-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%; left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: rgba(201,168,76,0.35);
+  }
+  .map-hotspot:hover .lore-tooltip { opacity: 1; }
+
+  /* Portrait frames */
+  .portrait-frame {
+    position: relative;
+    border: 1px solid rgba(201,168,76,0.3);
+    overflow: hidden;
+    background: #0a0a0c;
+  }
+  .portrait-frame::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 50%, rgba(10,10,12,0.9) 100%);
+    z-index: 1;
+    pointer-events: none;
+  }
+  .portrait-frame img { display: block; width: 100%; filter: sepia(0.3) brightness(0.85); }
+  .portrait-label {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    z-index: 2;
+    padding: 16px;
+    text-align: center;
+  }
+  /* Archive Cards */
+  .archive-card {
+    position: relative;
+    border: 1px solid rgba(201,168,76,0.2);
+    background: rgba(12,12,16,0.9);
+    overflow: hidden;
+  }
+
+  .old-shelf {
+    position: relative;
+    padding: clamp(1.25rem, 3vw, 2.4rem);
+    border: 1px solid rgba(201,168,76,0.24);
+    background:
+      linear-gradient(180deg, rgba(10,6,3,0.88), rgba(22,13,7,0.68)),
+      repeating-linear-gradient(90deg, rgba(201,168,76,0.04) 0 2px, transparent 2px 24px);
+    box-shadow:
+      inset 0 0 0 1px rgba(0,0,0,0.8),
+      inset 0 18px 42px rgba(0,0,0,0.72),
+      inset 0 -26px 52px rgba(0,0,0,0.82),
+      0 30px 90px rgba(0,0,0,0.55);
+  }
+
+  .old-shelf::before,
+  .old-shelf::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 22px;
+    background:
+      linear-gradient(180deg, rgba(86,51,24,0.9), rgba(24,13,6,0.98)),
+      repeating-linear-gradient(90deg, rgba(201,168,76,0.08) 0 1px, transparent 1px 18px);
+    border-top: 1px solid rgba(201,168,76,0.18);
+    border-bottom: 1px solid rgba(0,0,0,0.9);
+    box-shadow: 0 8px 22px rgba(0,0,0,0.6);
+  }
+
+  .old-shelf::before { top: 0; }
+  .old-shelf::after { bottom: 0; transform: rotate(180deg); }
+
+  .shelf-books {
+    position: relative;
+    z-index: 2;
+    align-items: end;
+  }
+
+  .shelf-book {
+    position: relative;
+    background: linear-gradient(180deg, rgba(12,12,14,0.92), rgba(5,5,7,0.98));
+    border: 1px solid rgba(201,168,76,0.18);
+    box-shadow: 0 22px 36px rgba(0,0,0,0.55);
+  }
+
+  .shelf-book::after {
+    content: '';
+    position: absolute;
+    left: -12px;
+    right: -12px;
+    bottom: -22px;
+    height: 20px;
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.8), transparent 70%);
+    pointer-events: none;
+  }
+
+  /* Lock overlay */
+  .lock-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(8,8,10,0.88);
+    backdrop-filter: blur(8px);
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: auto;
+    padding-bottom: 82px !important;
+    transition: opacity 0.8s ease;
+  }
+  .lock-overlay.unlocked {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* Password terminal */
+  .terminal-input {
+    background: rgba(10,10,12,0.9);
+    border: 1px solid rgba(201,168,76,0.4);
+    color: var(--gold);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.85rem;
+    padding: 10px 14px;
+    outline: none;
+    width: 100%;
+    letter-spacing: 0.08em;
+    transition: border-color 0.3s;
+  }
+  .terminal-input:focus { border-color: var(--gold); }
+  .terminal-input.error { border-color: var(--blood-bright); color: var(--blood-bright); animation: shake 0.4s ease; }
+  @keyframes shake {
+    0%,100% { transform: translateX(0); }
+    20%,60% { transform: translateX(-6px); }
+    40%,80% { transform: translateX(6px); }
+  }
+
+  .terminal-btn {
+    padding: 10px 22px;
+    border: 1px solid rgba(201,168,76,0.4);
+    background: transparent;
+    color: var(--gold);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.78rem;
+    letter-spacing: 0.15em;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .terminal-btn:hover { background: rgba(201,168,76,0.1); }
+
+  /* Email forms */
+  .email-input {
+    background: rgba(10,10,12,0.6);
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--parchment);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    padding: 10px 14px;
+    outline: none;
+    width: 100%;
+    transition: border-color 0.3s;
+  }
+  .email-input:focus { border-color: var(--gold); }
+  .email-input::placeholder { color: rgba(200,184,154,0.35); }
+
+  .consent-row {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 11px 12px;
+    border: 1px solid rgba(201,168,76,0.16);
+    background: rgba(10,10,12,0.42);
+    color: rgba(200,184,154,0.62);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    line-height: 1.6;
+    cursor: pointer;
+  }
+
+  .consent-row input {
+    flex: 0 0 auto;
+    width: 14px;
+    height: 14px;
+    margin-top: 3px;
+    accent-color: var(--gold);
+    cursor: pointer;
+  }
+
+  .consent-row a {
+    color: var(--gold);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .email-btn {
+    padding: 10px 20px;
+    background: rgba(201,168,76,0.12);
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: 'Cinzel', serif;
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+    cursor: pointer;
+    transition: all 0.3s;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 100%;
+  }
+  .email-btn:hover { background: rgba(201,168,76,0.22); }
+
+  .archive-signup-card {
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto 18px;
+    padding: 18px;
+    border: 1px solid rgba(201,168,76,0.28);
+    background:
+      radial-gradient(circle at 50% 0%, rgba(201,168,76,0.08), transparent 44%),
+      rgba(8,8,10,0.68);
+    box-shadow: inset 0 0 28px rgba(0,0,0,0.52), 0 18px 60px rgba(0,0,0,0.34);
+  }
+
+  .archive-signup-card .terminal-label {
+    margin-bottom: 10px;
+    color: rgba(201,168,76,0.74);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.22em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .archive-signup-card h4 {
+    margin: 0 0 10px;
+    color: var(--parchment);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(1.32rem, 2.65vw, 1.75rem);
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    line-height: 1.18;
+  }
+
+  .archive-signup-card .signup-copy {
+    margin: 0 0 16px;
+    color: rgba(232,221,198,0.76);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 0.96rem;
+    line-height: 1.55;
+  }
+
+  .archive-signup-card .email-input {
+    min-height: 46px;
+    margin-bottom: 12px;
+    background: rgba(245,241,232,0.94);
+    border-color: rgba(201,168,76,0.42);
+    color: #101013;
+    box-shadow: inset 0 0 18px rgba(0,0,0,0.2), 0 0 26px rgba(232,221,198,0.14);
+  }
+
+  .archive-signup-card .email-input::placeholder {
+    color: rgba(10,10,12,0.62);
+  }
+
+  .archive-signup-card .email-btn {
+    min-height: 46px;
+    background: rgba(0,0,0,0.92);
+    color: rgba(232,221,198,0.96);
+    border-color: rgba(201,168,76,0.34);
+  }
+
+  .archive-signup-card .email-btn:hover {
+    color: var(--gold);
+    border-color: var(--gold);
+    background: rgba(12,12,14,0.96);
+  }
+
+  .archive-signup-card .email-confirm {
+    display: none;
+    margin-top: 12px;
+    color: var(--emerald-bright);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  .archive-signup-card .consent-row {
+    padding: 9px 10px;
+    font-size: 0.56rem;
+    line-height: 1.45;
+  }
+
+  .archive-code-awake {
+    animation: archive-code-awake 1.4s ease both;
+  }
+
+  @keyframes archive-code-awake {
+    0% {
+      box-shadow: 0 0 0 rgba(201,168,76,0);
+      transform: translateY(0);
+    }
+    28% {
+      box-shadow: 0 0 34px rgba(201,168,76,0.2);
+      transform: translateY(-4px);
+    }
+    100% {
+      box-shadow: 0 0 0 rgba(201,168,76,0);
+      transform: translateY(0);
+    }
+  }
+
+  .book3-sealed-terminal {
+    display: none;
+  }
+
+  /* Book 3 locked state */
+  .double-locked {
+    filter: grayscale(0.85) brightness(0.6);
+  }
+  .double-locked-overlay {
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      -45deg,
+      rgba(8,8,10,0.5) 0px,
+      rgba(8,8,10,0.5) 8px,
+      transparent 8px,
+      transparent 16px
+    );
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* Scroll fade-in animation */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Section label */
+  .section-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.3em;
+    color: var(--gold-dim);
+    text-transform: uppercase;
+  }
+
+  /* Nav */
+  nav a {
+    font-family: 'Cinzel', serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.22em;
+    color: rgba(200,184,154,0.55);
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
+  nav a:hover { color: var(--gold); }
+
+  /* Ornamental border corners */
+  .corner-border {
+    position: relative;
+  }
+  .corner-border::before, .corner-border::after {
+    content: '';
+    position: absolute;
+    width: 16px; height: 16px;
+  }
+  .corner-border::before {
+    top: -1px; left: -1px;
+    border-top: 2px solid var(--gold);
+    border-left: 2px solid var(--gold);
+  }
+  .corner-border::after {
+    bottom: -1px; right: -1px;
+    border-bottom: 2px solid var(--gold);
+    border-right: 2px solid var(--gold);
+  }
+
+  /* Blinking cursor */
+  .cursor-blink::after {
+    content: '_';
+    animation: blink 1s step-end infinite;
+    color: var(--gold);
+  }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+  /* Scroll indicator */
+  .scroll-indicator {
+    animation: float 2.5s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(8px); }
+  }
+
+  /* Horizontal rule ornament */
+  .ornament-line {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--gold-dim);
+    font-size: 0.7rem;
+  }
+  .ornament-line::before, .ornament-line::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-dim));
+  }
+  .ornament-line::after {
+    background: linear-gradient(270deg, transparent, var(--gold-dim));
+  }
+
+  /* Ambient glows */
+  .ambient-gold {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(ellipse, rgba(201,168,76,0.06) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+  .ambient-blood {
+    position: absolute;
+    width: 500px; height: 500px;
+    background: radial-gradient(ellipse, rgba(102,0,0,0.1) 0%, transparent 70%);
+    pointer-events: none;
+    border-radius: 50%;
+  }
+
+  /* Unlock reveal */
+  #book2-reveal { display: none; }
+  #book2-reveal.active { display: block; }
+
+  .book2-full-reveal {
+    margin-top: 30px;
+    border: 1px solid rgba(201,168,76,0.28);
+    background: #050507;
+    box-shadow: 0 28px 80px rgba(0,0,0,0.55), 0 0 42px rgba(201,168,76,0.08);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 900ms ease, transform 900ms ease;
+  }
+
+  #book2-reveal.active .book2-full-reveal {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .book2-full-reveal img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .book2-full-reveal figcaption {
+    padding: 14px 16px;
+    border-top: 1px solid rgba(201,168,76,0.14);
+    background: rgba(8,8,10,0.86);
+    color: rgba(201,168,76,0.58);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  /* Error message */
+  .error-msg {
+    color: var(--blood-bright);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    min-height: 1.2em;
+    transition: opacity 0.3s;
+  }
+
+  /* Faded teaser text */
+  .faded-text {
+    opacity: 0.38;
+    position: relative;
+  }
+
+  /* Map lore active state */
+  .lore-fragment-box {
+    border: 1px solid rgba(201,168,76,0.22);
+    background: rgba(10,10,12,0.7);
+    padding: 20px 28px;
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: center;
+    min-height: 80px;
+    transition: opacity 0.4s ease;
+    color: var(--parchment);
+  }
+
+  /* ─── GLITCH / CORRUPTION ANIMATION ─── */
+  @keyframes glitch-flicker {
+    0%   { text-shadow: 2px 0 var(--blood-bright), -2px 0 var(--emerald); opacity:1; }
+    5%   { text-shadow: -2px 0 var(--blood-bright), 2px 0 var(--emerald); clip-path: inset(20% 0 50% 0); }
+    10%  { text-shadow: 2px 0 var(--gold), -1px 0 var(--blood-bright); }
+    15%  { clip-path: inset(60% 0 10% 0); text-shadow: -3px 0 var(--emerald), 3px 0 var(--gold); }
+    20%  { clip-path: none; text-shadow: none; opacity:1; }
+    100% { text-shadow: none; opacity:1; }
+  }
+  @keyframes char-cycle {
+    0%   { opacity: 1; }
+    49%  { opacity: 1; }
+    50%  { opacity: 0; }
+    99%  { opacity: 0; }
+    100% { opacity: 1; }
+  }
+  .glitch-title {
+    position: relative;
+    cursor: default;
+  }
+  .glitch-title:hover .glitch-text {
+    animation: glitch-flicker 0.08s steps(1) infinite;
+    color: var(--gold);
+  }
+  .glitch-char {
+    display: inline-block;
+    transition: none;
+  }
+  .glitch-title:hover .glitch-char {
+    animation: char-cycle 0.06s steps(1) infinite;
+  }
+
+  /* ─── SOUNDSCAPE PLAYER ─── */
+  #soundscape-section {
+    position: relative;
+    background: #06060a;
+    overflow: hidden;
+  }
+  .sound-pin {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    padding: 20px 28px;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(10,10,12,0.6);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    flex: 1;
+    min-width: 200px;
+  }
+  .sound-pin::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.6s ease;
+    pointer-events: none;
+  }
+  .sound-pin.solaria-pin::before {
+    background: radial-gradient(ellipse at center, rgba(212,168,85,0.12) 0%, transparent 70%);
+  }
+  .sound-pin.aurelia-pin::before {
+    background: radial-gradient(ellipse at center, rgba(45,107,74,0.15) 0%, transparent 70%);
+  }
+  .sound-pin:hover::before, .sound-pin.active::before { opacity: 1; }
+  .sound-pin.active {
+    border-color: rgba(201,168,76,0.45);
+  }
+  .sound-pin.aurelia-pin.active {
+    border-color: rgba(74,155,110,0.45);
+  }
+
+  /* Waveform bars */
+  .wave-bar {
+    width: 3px;
+    background: var(--gold-dim);
+    border-radius: 2px;
+    animation: none;
+    height: 6px;
+    transition: background 0.4s;
+  }
+  .sound-pin.active .wave-bar {
+    animation: wave-dance 0.8s ease-in-out infinite alternate;
+  }
+  .sound-pin.aurelia-pin.active .wave-bar { background: var(--emerald-bright); }
+  .sound-pin.solaria-pin.active .wave-bar  { background: var(--solarian-warm); }
+  @keyframes wave-dance {
+    from { height: 4px; }
+    to   { height: var(--h, 22px); }
+  }
+  .wave-bar:nth-child(1)  { --h:10px; animation-delay:0s; }
+  .wave-bar:nth-child(2)  { --h:22px; animation-delay:0.08s; }
+  .wave-bar:nth-child(3)  { --h:16px; animation-delay:0.16s; }
+  .wave-bar:nth-child(4)  { --h:28px; animation-delay:0.04s; }
+  .wave-bar:nth-child(5)  { --h:18px; animation-delay:0.12s; }
+  .wave-bar:nth-child(6)  { --h:24px; animation-delay:0.2s; }
+  .wave-bar:nth-child(7)  { --h:14px; animation-delay:0.06s; }
+  .wave-bar:nth-child(8)  { --h:20px; animation-delay:0.14s; }
+  .wave-bar:nth-child(9)  { --h:26px; animation-delay:0.02s; }
+  .wave-bar:nth-child(10) { --h:12px; animation-delay:0.18s; }
+
+  /* Diary text typewriter */
+  .diary-entry {
+    font-family: 'IM Fell English', serif;
+    font-style: italic;
+    line-height: 1.9;
+    font-size: 1.02rem;
+    min-height: 140px;
+    padding: 22px 28px;
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(8,8,12,0.7);
+    transition: border-color 0.6s, background 0.6s;
+    position: relative;
+    overflow: hidden;
+  }
+  .diary-entry.aurelia-mode {
+    border-color: rgba(45,107,74,0.3);
+    background: rgba(4,10,8,0.85);
+  }
+  .diary-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background: var(--gold);
+    vertical-align: text-bottom;
+    margin-left: 2px;
+    animation: blink 0.8s step-end infinite;
+  }
+  .diary-entry.aurelia-mode .diary-cursor { background: var(--emerald-bright); }
+
+  /* Ambient pulse ring for soundscape */
+  @keyframes ambient-pulse {
+    0%, 100% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.08); opacity: 1; }
+  }
+  .sound-active-bg {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    transition: background 1.2s ease;
+  }
+
+  /* ─── ARCHIVE DASHBOARD / SIDEBAR ─── */
+  #archive-dashboard {
+    position: relative;
+  }
+  .dashboard-img-zone {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(201,168,76,0.22);
+    cursor: crosshair;
+  }
+  .dashboard-img-zone img { display: block; width: 100%; }
+
+  /* Clickable zones over the archive image */
+  .dash-hotspot {
+    position: absolute;
+    cursor: pointer;
+    border: 1px solid transparent;
+    transition: all 0.25s ease;
+    border-radius: 2px;
+  }
+  .dash-hotspot:hover {
+    border-color: rgba(201,168,76,0.5);
+    background: rgba(201,168,76,0.07);
+  }
+  .dash-hotspot .dash-label {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    color: var(--gold);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.2s;
+    background: rgba(10,10,12,0.9);
+    padding: 3px 8px;
+    border: 1px solid rgba(201,168,76,0.3);
+    pointer-events: none;
+  }
+  .dash-hotspot:hover .dash-label { opacity: 1; }
+
+  /* Sidebar panel */
+  #sidebar-panel {
+    position: fixed;
+    top: 0; right: -480px;
+    width: 440px;
+    max-width: 95vw;
+    height: 100vh;
+    background: rgba(8,8,12,0.97);
+    border-left: 1px solid rgba(201,168,76,0.25);
+    backdrop-filter: blur(24px);
+    z-index: 200;
+    transition: right 0.5s cubic-bezier(0.77,0,0.175,1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  #sidebar-panel.open { right: 0; }
+
+  .sidebar-header {
+    padding: 22px 24px 16px;
+    border-bottom: 1px solid rgba(201,168,76,0.15);
+    flex-shrink: 0;
+  }
+  .sidebar-close {
+    background: none;
+    border: 1px solid rgba(201,168,76,0.3);
+    color: var(--gold-dim);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    float: right;
+    margin-top: -4px;
+  }
+  .sidebar-close:hover { color: var(--gold); border-color: var(--gold); }
+
+  .sidebar-body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 24px;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(201,168,76,0.2) transparent;
+  }
+
+  /* Terminal typewriter output */
+  .terminal-output {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.78rem;
+    line-height: 2;
+    letter-spacing: 0.04em;
+    color: var(--gold);
+  }
+  .terminal-line {
+    display: block;
+    opacity: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .terminal-line.dim { color: rgba(200,184,154,0.5); }
+  .terminal-line.bright { color: var(--parchment); font-family: 'IM Fell English', serif; font-style: italic; font-size: 0.92rem; letter-spacing: 0; }
+  .terminal-line.blood { color: var(--blood-bright); }
+  .terminal-line.emerald { color: var(--emerald-bright); }
+  .terminal-line.visible { opacity: 1; }
+
+  /* Sidebar scan line */
+  #sidebar-panel::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    animation: scan-line 3s linear infinite;
+    pointer-events: none;
+    opacity: 0.4;
+  }
+  @keyframes scan-line {
+    0%   { top: 0; }
+    100% { top: 100%; }
+  }
+
+  /* ─── CONCORD THREAT LEVEL INDICATOR ─── */
+  #concord-bar {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    z-index: 300;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    border-top: 1px solid rgba(201,168,76,0.15);
+    background: rgba(8,8,12,0.92);
+    backdrop-filter: blur(12px);
+    transition: border-color 0.8s, background 0.8s;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  #concord-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: radial-gradient(ellipse at 50% 150%, rgba(139,26,26,0.5) 0%, transparent 70%);
+    transition: opacity 1.2s ease;
+    pointer-events: none;
+  }
+  #concord-bar.level-2::before  { opacity: 0.3; }
+  #concord-bar.level-3::before  { opacity: 0.6; }
+  #concord-bar.level-4::before  { opacity: 1; animation: blood-pulse 2s ease-in-out infinite; }
+  @keyframes blood-pulse {
+    0%,100% { opacity: 0.7; }
+    50%      { opacity: 1; }
+  }
+  #concord-bar.level-2 { border-color: rgba(139,26,26,0.3); }
+  #concord-bar.level-3 { border-color: rgba(139,26,26,0.6); }
+  #concord-bar.level-4 { border-color: rgba(139,26,26,0.9); }
+
+  .concord-dot {
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: rgba(201,168,76,0.4);
+    transition: background 0.6s, box-shadow 0.6s;
+  }
+  .concord-dot.lit       { background: var(--gold); box-shadow: 0 0 6px var(--gold); }
+  .concord-dot.lit-blood { background: var(--blood-bright); box-shadow: 0 0 8px var(--blood-bright); animation: dot-flicker 0.9s ease-in-out infinite alternate; }
+  @keyframes dot-flicker { from { opacity:0.6; } to { opacity:1; } }
+
+  #concord-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    color: rgba(200,184,154,0.45);
+    transition: color 0.6s;
+  }
+  #concord-bar.level-2 #concord-text { color: rgba(200,184,154,0.65); }
+  #concord-bar.level-3 #concord-text { color: rgba(255,180,100,0.8); }
+  #concord-bar.level-4 #concord-text { color: var(--blood-bright); }
+
+  #flash-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 500;
+    pointer-events: none;
+    opacity: 0;
+    background: rgba(45,11,11,0.85);
+    transition: opacity 0.15s;
+  }
+  #flash-overlay.flash { opacity: 1; }
+  /* Archive boot sequence preloader styles removed. */
+  #boot-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 8vw 10vw;
+    transition: opacity 0.6s ease;
+    overflow: hidden;
+  }
+  #boot-screen.fade-out {
+    opacity: 0;
+    pointer-events: none;
+  }
+  #boot-screen.gone {
+    display: none;
+  }
+  .boot-line {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: clamp(0.65rem, 1.5vw, 0.82rem);
+    line-height: 2;
+    letter-spacing: 0.06em;
+    display: block;
+    opacity: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .boot-line.col-gold    { color: var(--gold); }
+  .boot-line.col-dim     { color: rgba(200,184,154,0.45); }
+  .boot-line.col-blood   { color: #8B1A1A; }
+  .boot-line.col-emerald { color: #4A9B6E; }
+  .boot-line.col-white   { color: rgba(255,255,255,0.85); }
+  .boot-line.col-warn    { color: #c9732a; }
+  .boot-line.visible     { opacity: 1; }
+
+  /* Skip button */
+  #boot-skip {
+    position: absolute;
+    bottom: 28px;
+    right: 32px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.22em;
+    color: rgba(200,184,154,0.25);
+    background: none;
+    border: 1px solid rgba(200,184,154,0.12);
+    padding: 6px 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  #boot-skip:hover { color: rgba(200,184,154,0.6); border-color: rgba(200,184,154,0.3); }
+
+  /* Boot progress bar */
+  #boot-progress-wrap {
+    position: absolute;
+    bottom: 60px;
+    left: 10vw;
+    right: 10vw;
+    height: 1px;
+    background: rgba(201,168,76,0.12);
+  }
+  #boot-progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--blood), var(--gold));
+    transition: width 0.3s linear;
+    box-shadow: 0 0 8px rgba(201,168,76,0.4);
+  }
+
+  /* Cursor blink in boot */
+  #boot-cursor {
+    display: inline-block;
+    width: 8px;
+    height: 0.9em;
+    background: var(--gold);
+    vertical-align: text-bottom;
+    margin-left: 3px;
+    animation: blink 0.7s step-end infinite;
+  }
+
+  /* Scanline on boot */
+  #boot-screen::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent 0px,
+      transparent 2px,
+      rgba(0,0,0,0.12) 2px,
+      rgba(0,0,0,0.12) 4px
+    );
+    pointer-events: none;
+  }
+
+  /* Readability pass: preserves the atmosphere while making copy easier to read. */
+  body {
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  p,
+  .glass-panel p,
+  .archive-card p,
+  .conversion-strip p,
+  .lore-fragment-box,
+  .diary-entry,
+  .terminal-line.bright {
+    color: rgba(232,221,198,0.88) !important;
+    text-shadow: 0 1px 18px rgba(0,0,0,0.35);
+  }
+
+  .title-fell {
+    letter-spacing: 0;
+  }
+
+  .glass-panel p.title-fell,
+  .archive-card p.title-fell,
+  .conversion-strip p,
+  #series-intro p.title-fell,
+  #manifest .glass-panel p.title-fell,
+  #threshold-sim p.title-fell,
+  #memory-sync p.title-fell,
+  #archives p.title-fell,
+  footer p.title-fell {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: normal !important;
+    font-weight: 400;
+  }
+
+  .readability-note {
+    margin-top: 18px;
+    padding: 12px 14px;
+    border: 1px solid rgba(201,168,76,0.18);
+    background: rgba(10,10,12,0.46);
+    color: rgba(232,221,198,0.74);
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    line-height: 1.65;
+    text-align: center;
+  }
+
+  .map-cta-panel,
+  .privacy-mini {
+    margin-top: 28px;
+    padding: 18px 20px;
+    border: 1px solid rgba(201,168,76,0.2);
+    background: rgba(10,10,12,0.58);
+    text-align: center;
+  }
+
+  .mailerlite-archive-embed {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto 20px;
+    padding: 12px;
+    border: 1px solid rgba(201,168,76,0.32);
+    background:
+      linear-gradient(180deg, rgba(201,168,76,0.07), rgba(8,8,10,0.82) 22%),
+      radial-gradient(circle at top, rgba(201,168,76,0.16), transparent 48%),
+      rgba(8,8,10,0.88);
+    box-shadow:
+      inset 0 0 28px rgba(0,0,0,0.62),
+      0 18px 70px rgba(0,0,0,0.45),
+      0 0 34px rgba(201,168,76,0.08);
+    overflow: hidden;
+  }
+
+  .mailerlite-archive-embed::before {
+    content: 'SECURE DISPATCH TERMINAL';
+    display: block;
+    margin: 2px 0 10px;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.58rem;
+    letter-spacing: 0.18em;
+    color: rgba(201,168,76,0.7);
+    text-align: center;
+  }
+
+  .mailerlite-archive-embed::after {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    pointer-events: none;
+    border: 1px solid rgba(201,168,76,0.08);
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.2);
+  }
+
+  .mailerlite-archive-embed .ml-embedded,
+  .mailerlite-archive-embed iframe {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .mailerlite-archive-embed iframe {
+    display: block !important;
+    border: 0 !important;
+    border-radius: 2px;
+    background: #0A0A0C !important;
+    filter: invert(1) hue-rotate(180deg) saturate(0.7) brightness(0.78) contrast(0.98);
+    opacity: 0.92;
+  }
+
+  .mailerlite-archive-embed .ml-form-embedContainer,
+  .mailerlite-archive-embed .ml-form-embedWrapper,
+  .mailerlite-archive-embed .ml-form-embedBody,
+  .mailerlite-archive-embed .ml-form-successBody {
+    width: 100% !important;
+    max-width: 100% !important;
+    background: transparent !important;
+    color: rgba(232,221,198,0.9) !important;
+    box-shadow: none !important;
+  }
+
+  .mailerlite-archive-embed .ml-form-embedBody,
+  .mailerlite-archive-embed .ml-form-successBody {
+    padding: 18px 18px 20px !important;
+  }
+
+  .mailerlite-archive-embed h4,
+  .mailerlite-archive-embed .ml-form-embedBody h4,
+  .mailerlite-archive-embed .ml-form-successBody h4 {
+    color: var(--parchment) !important;
+    font-family: 'Cinzel', serif !important;
+    font-size: clamp(1.25rem, 3vw, 1.75rem) !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.25 !important;
+  }
+
+  .mailerlite-archive-embed p,
+  .mailerlite-archive-embed label,
+  .mailerlite-archive-embed span {
+    color: rgba(232,221,198,0.82) !important;
+    font-family: 'Cormorant Garamond', serif !important;
+    font-size: 0.98rem !important;
+    line-height: 1.55 !important;
+  }
+
+  .mailerlite-archive-embed input[type="email"],
+  .mailerlite-archive-embed input[type="text"] {
+    min-height: 48px !important;
+    border: 1px solid rgba(201,168,76,0.35) !important;
+    border-radius: 0 !important;
+    background: rgba(6,6,8,0.88) !important;
+    color: rgba(248,238,216,0.96) !important;
+    font-family: 'Share Tech Mono', monospace !important;
+    box-shadow: inset 0 0 18px rgba(0,0,0,0.35) !important;
+  }
+
+  .mailerlite-archive-embed button,
+  .mailerlite-archive-embed .primary {
+    min-height: 48px !important;
+    border: 1px solid rgba(201,168,76,0.72) !important;
+    border-radius: 0 !important;
+    background: rgba(6,6,8,0.95) !important;
+    color: var(--gold) !important;
+    font-family: 'Cinzel', serif !important;
+    font-size: 0.72rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    text-transform: uppercase !important;
+  }
+
+  .title-display {
+    line-height: 1.22;
+    text-wrap: balance;
+  }
+
+  h1.title-display {
+    line-height: 1.08;
+  }
+
+  .section-label,
+  .title-mono,
+  nav a,
+  .shelf-intro-note,
+  .optional-scan-badge {
+    font-weight: 400;
+    letter-spacing: 0.16em;
+  }
+
+  .section-label {
+    color: rgba(220,188,92,0.9);
+  }
+
+  nav a {
+    color: rgba(218,205,180,0.68);
+  }
+
+  .cta-btn,
+  .email-btn,
+  .terminal-btn {
+    line-height: 1.35;
+    letter-spacing: 0.11em;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  .email-input,
+  .terminal-input {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: rgba(236,224,198,0.94);
+  }
+
+  .email-input::placeholder,
+  .terminal-input::placeholder {
+    color: rgba(218,205,180,0.48);
+  }
+
+  .consent-row {
+    color: rgba(232,221,198,0.82);
+    font-size: 0.72rem;
+    letter-spacing: 0.04em;
+    line-height: 1.65;
+  }
+
+  .gate-privacy-note,
+  .error-msg {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+  }
+
+  .lore-tooltip {
+    font-size: 0.92rem;
+    line-height: 1.7;
+    color: rgba(236,224,198,0.9);
+  }
+
+  .portrait-label {
+    background: linear-gradient(to top, rgba(4,4,6,0.92), rgba(4,4,6,0.05));
+  }
+
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+
+    .title-display {
+      letter-spacing: 0.07em !important;
+    }
+
+    .section-label {
+      font-size: 0.62rem !important;
+      letter-spacing: 0.16em !important;
+      line-height: 1.6;
+    }
+
+    .title-mono {
+      letter-spacing: 0.1em !important;
+    }
+
+    p,
+    .glass-panel p,
+    .archive-card p,
+    .lore-fragment-box {
+      font-size: 1.05rem !important;
+      line-height: 1.75 !important;
+    }
+
+    .cta-btn,
+    .email-btn,
+    .terminal-btn {
+      white-space: normal;
+      letter-spacing: 0.1em !important;
+      font-size: 0.68rem !important;
+    }
+
+    .mobile-section-nav a {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      color: rgba(218,205,180,0.7);
+    }
+
+    .consent-row {
+      font-size: 0.76rem;
+      letter-spacing: 0.02em;
+    }
+
+    .gate-privacy-note,
+    .error-msg {
+      font-size: 0.74rem;
+      letter-spacing: 0.04em;
+    }
+  }
+
+  /* Final polish pass: spacing, archive clarity, and mobile readability only. */
+  section:not(#hero) {
+    padding-left: clamp(18px, 4vw, 48px);
+    padding-right: clamp(18px, 4vw, 48px);
+  }
+
+  .archive-card {
+    box-shadow:
+      inset 0 0 36px rgba(0,0,0,0.5),
+      0 26px 70px rgba(0,0,0,0.42);
+  }
+
+  .archive-card > .p-6,
+  .archive-card > .p-7 {
+    padding-left: clamp(20px, 3vw, 34px) !important;
+    padding-right: clamp(20px, 3vw, 34px) !important;
+  }
+
+  .archive-signup-card {
+    max-width: 460px;
+    padding: clamp(18px, 2.5vw, 24px);
+  }
+
+  .archive-signup-card h4 {
+    max-width: 100%;
+  }
+
+  .archive-signup-card .signup-copy {
+    color: rgba(238,229,207,0.86);
+  }
+
+  .archive-signup-card .consent-row {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 11px;
+    align-items: start;
+    color: rgba(238,229,207,0.84);
+  }
+
+  .archive-signup-card .consent-row input {
+    margin-top: 4px;
+  }
+
+  #unlock-newsletter-form {
+    padding-top: 4px;
+  }
+
+  #pw-error {
+    margin-top: 12px;
+    line-height: 1.55;
+    text-align: center;
+  }
+
+  .book2-full-reveal figcaption {
+    display: grid;
+    gap: 6px;
+  }
+
+  .book2-full-reveal figcaption span {
+    color: rgba(232,221,198,0.88);
+    font-family: 'Cinzel', serif;
+    font-size: clamp(0.82rem, 1.8vw, 1rem);
+    letter-spacing: 0.18em;
+  }
+
+  .book2-full-reveal figcaption small {
+    color: rgba(201,168,76,0.58);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+  }
+
+  .conversion-strip {
+    gap: clamp(18px, 3vw, 32px);
+  }
+
+  @media (max-width: 1024px) {
+    .grid.md\:grid-cols-2 {
+      gap: 1.5rem;
+    }
+
+    .archive-card.fade-in.glow-blood {
+      min-height: 900px !important;
+    }
+  }
+
+  @media (max-width: 768px) {
+    section:not(#hero) {
+      padding-left: 18px;
+      padding-right: 18px;
+    }
+
+    nav > span {
+      font-size: 0.54rem !important;
+      letter-spacing: 0.2em !important;
+    }
+
+    .archive-card.fade-in.glow-blood {
+      min-height: 980px !important;
+    }
+
+    .lock-overlay {
+      padding: 22px 18px 96px !important;
+      justify-content: flex-start;
+    }
+
+    .archive-signup-card {
+      max-width: 100%;
+      padding: 18px;
+    }
+
+    .archive-signup-card h4 {
+      max-width: 100%;
+      font-size: 1.5rem;
+    }
+
+    .archive-signup-card .signup-copy {
+      font-size: 1rem !important;
+      line-height: 1.7 !important;
+    }
+
+    .archive-signup-card .consent-row {
+      font-size: 0.7rem !important;
+      line-height: 1.55 !important;
+      letter-spacing: 0.01em !important;
+    }
+
+    .email-input,
+    .terminal-input {
+      min-height: 50px;
+      font-size: 0.95rem !important;
+    }
+
+    #book2-reveal {
+      padding: 22px 18px !important;
+    }
+
+    .book2-full-reveal {
+      margin-top: 24px;
+    }
+
+    .book2-full-reveal figcaption {
+      padding: 16px 12px;
+    }
+
+    .book2-full-reveal figcaption span {
+      letter-spacing: 0.12em;
+    }
+  }
+</style>
+</head>
+<body>
+<iframe name="mailerlite-submit-frame" title="MailerLite signup submission" style="display:none; width:0; height:0; border:0;"></iframe>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- FLASH OVERLAY (protocol violation) -->
+<div id="flash-overlay"></div>
+
+<!-- CONCORD COUNCIL SECURITY BAR (fixed bottom) -->
+<div id="concord-bar">
+  <div style="display:flex; gap:5px; align-items:center;">
+    <div class="concord-dot lit" id="cdot-1"></div>
+    <div class="concord-dot" id="cdot-2"></div>
+    <div class="concord-dot" id="cdot-3"></div>
+    <div class="concord-dot" id="cdot-4"></div>
+  </div>
+  <span id="concord-text">CONCORD COUNCIL · LEVEL I MONITORING — OBSERVATIONAL ONLY</span>
+  <div style="display:flex; gap:5px; align-items:center;">
+    <div class="concord-dot" id="cdot-5"></div>
+    <div class="concord-dot" id="cdot-6"></div>
+    <div class="concord-dot" id="cdot-7"></div>
+    <div class="concord-dot lit" id="cdot-8"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- NAV -->
+<!-- ════════════════════════════════════════════════════ -->
+<nav class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 py-5" style="background: linear-gradient(to bottom, rgba(10,10,12,0.95) 0%, transparent 100%);">
+  <span class="title-display text-xs tracking-widest" style="color:var(--gold-dim); font-size:0.6rem; letter-spacing:0.3em;">AURELIAN SECRETS OF SELENE</span>
+  <div class="hidden md:flex gap-8">
+    <a href="#map">The Map</a>
+    <a href="#manifest">Characters</a>
+    <a href="#threshold-sim">The Protocol</a>
+    <a href="#memory-sync">Themes</a>
+    <a href="#dashboard">Archive Scan</a>
+    <a href="#archives">The Archives</a>
+  </div>
+  <a href="https://www.amazon.com/Aurelian-Secrets-Selene-Bridge-Chronicles-ebook/dp/B0H1LLWYWM" target="_blank" class="cta-btn" style="padding:8px 22px; font-size:0.58rem;">Read on Amazon</a>
+</nav>
+<div class="mobile-section-nav" aria-label="Mobile section navigation">
+  <a href="#map">Map</a>
+  <a href="#manifest">Characters</a>
+  <a href="#threshold-sim">Protocol</a>
+  <a href="#memory-sync">Themes</a>
+  <a href="#archives">Books</a>
+  <a href="#dashboard">Scan</a>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- SECTION 1: HERO THRESHOLD -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="relative z-10 text-center pb-20 px-6" style="max-width:820px; margin:0 auto;">
+
+    <div class="section-label mb-6 fade-in">Book One · Aurelian Secrets of Selene</div>
+
+    <h1 class="title-display fade-in" style="font-size:clamp(2.2rem, 6vw, 5.5rem); line-height:1.1; letter-spacing:0.06em; color: var(--parchment); text-shadow: 0 0 60px rgba(201,168,76,0.4), 0 4px 40px rgba(0,0,0,0.8); margin-bottom:0.3em; font-weight:400;">
+      Whose Blood<br/>Built the Bridge
+    </h1>
+
+    <p class="title-fell fade-in" style="font-size:1.15rem; font-style:italic; color:rgba(200,184,154,0.65); letter-spacing:0.08em; margin-bottom:2.5rem;">
+      "The bridge remembered whose blood built it."
+    </p>
+
+    <hr class="blood-rule fade-in" style="margin-bottom:2.5rem; max-width:400px; margin-left:auto; margin-right:auto;">
+
+    <div class="fade-in">
+      <a href="https://www.amazon.com/Aurelian-Secrets-Selene-Bridge-Chronicles-ebook/dp/B0H1LLWYWM" target="_blank" class="cta-btn">
+        Cross the Threshold — Read Book One on Amazon
+      </a>
+          <div class="title-mono mt-4" style="font-size:0.62rem; color:rgba(201,168,76,0.72); letter-spacing:0.18em;">KINDLE EDITION: SEE AMAZON FOR CURRENT PRICE</div>
+    </div>
+
+    <div class="scroll-indicator mt-16 fade-in" style="color:rgba(200,184,154,0.3); font-family:'Cinzel',serif; font-size:0.6rem; letter-spacing:0.3em;">
+      ↓ &nbsp; SCROLL TO ENTER &nbsp; ↓
+    </div>
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- SECTION 2: CARTOGRAPHY OF THE FEUD -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="series-intro" class="py-20 px-4 md:px-10 relative overflow-hidden" style="background:linear-gradient(to bottom, var(--obsidian) 0%, #0b0b0f 100%);">
+  <div style="max-width:1050px; margin:0 auto;">
+    <div class="grid md:grid-cols-[1.05fr_.95fr] gap-8 items-stretch">
+      <div class="glass-panel corner-border p-8 fade-in">
+        <div class="section-label mb-3">Official Series Hub</div>
+        <h2 class="title-display" style="font-size:clamp(1.5rem,3.8vw,2.6rem); color:var(--parchment); font-weight:400; letter-spacing:0.1em; line-height:1.25;">Dark fantasy romance at the border of two broken kingdoms.</h2>
+        <p class="title-fell mt-5" style="font-style:italic; color:rgba(200,184,154,0.72); font-size:1.08rem; line-height:1.9;">Aurelian Secrets of Selene follows Solaria and Aurelia: one realm alive with warmth and growth, the other preserved in cold, haunted beauty. Between them stands a bridge, a law of forbidden touch, and an archive full of records that never tell the whole truth.</p>
+        <div class="readability-note">No spoilers before the restricted reader gate. New readers can explore safely.</div>
+      </div>
+      <div class="glass-panel corner-border p-8 fade-in">
+        <div class="title-mono text-xs mb-4" style="color:var(--gold-dim); letter-spacing:0.22em;">BOOK ONE STATUS</div>
+        <div class="title-display mb-3" style="font-size:1.25rem; color:var(--parchment); letter-spacing:0.12em;">Whose Blood Built the Bridge</div>
+        <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.68); font-size:1rem; line-height:1.8;">Book One is live now. This page is spoiler-safe until the restricted Book Two gate, which is designed for readers who have finished the ending.</p>
+        <a href="https://www.amazon.com/Aurelian-Secrets-Selene-Bridge-Chronicles-ebook/dp/B0H1LLWYWM" target="_blank" class="cta-btn mt-6" style="display:inline-block; padding:9px 22px; font-size:0.58rem;">Read on Amazon</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="reader-fit" class="py-20 px-4 md:px-10 relative overflow-hidden" style="background:#0a0a0c;">
+  <div style="max-width:1050px; margin:0 auto;">
+    <div class="text-center mb-10 fade-in">
+      <div class="section-label mb-3">Read If You Love</div>
+      <h2 class="title-display" style="font-size:clamp(1.4rem,3.5vw,2.4rem); color:var(--parchment); font-weight:400; letter-spacing:0.1em;">Cursed Rules, Slow Fire, Dark Fantasy</h2>
+    </div>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+      <div class="glass-panel p-5 fade-in"><div class="title-mono text-xs" style="color:var(--gold); letter-spacing:0.18em;">FORBIDDEN TOUCH</div></div>
+      <div class="glass-panel p-5 fade-in"><div class="title-mono text-xs" style="color:var(--gold); letter-spacing:0.18em;">CURSED KINGDOMS</div></div>
+      <div class="glass-panel p-5 fade-in"><div class="title-mono text-xs" style="color:var(--gold); letter-spacing:0.18em;">SLOW-BURN ROMANCE</div></div>
+      <div class="glass-panel p-5 fade-in"><div class="title-mono text-xs" style="color:var(--gold); letter-spacing:0.18em;">MORALLY GRAY LOVE INTEREST</div></div>
+      <div class="glass-panel p-5 fade-in"><div class="title-mono text-xs" style="color:var(--gold); letter-spacing:0.18em;">DARK FANTASY MYSTERY</div></div>
+    </div>
+  </div>
+</section>
+<section id="map" class="py-28 px-4 md:px-10 relative overflow-hidden" style="background: linear-gradient(to bottom, var(--obsidian) 0%, #0c0c10 50%, var(--obsidian) 100%);">
+
+  <div class="ambient-gold" style="top:-200px; left:-200px;"></div>
+
+  <div style="max-width:1100px; margin:0 auto;">
+
+    <div class="text-center mb-14 fade-in">
+      <div class="section-label mb-3">Section II · Recovered Cartographic Fragment</div>
+      <h2 class="title-display" style="font-size:clamp(1.6rem,4vw,3rem); color:var(--parchment); font-weight:400; letter-spacing:0.1em;">
+        The Cartography of the Feud
+      </h2>
+      <p class="title-fell mt-3" style="font-style:italic; color:rgba(200,184,154,0.5); font-size:1rem; letter-spacing:0.05em;">
+        This map is a recovered fragment from pre-separation records. Many regions have been erased from official archives.
+      </p>
+    </div>
+
+    <!-- Map with interactive hotspots -->
+    <div class="map-container fade-in" style="border-color: rgba(201,168,76,0.3);">
+      <img src="ancient-map.png" alt="Ancient Map of Solaria and Aurelia" style="width:100%; display:block;" />
+
+      <!-- Hotspot: The Ancient Bridge -->
+      <div class="map-hotspot" style="top:44%; left:47%;" data-lore="ancient-bridge">
+        <div class="map-hotspot-ring"></div>
+        <div class="lore-tooltip">
+          <span style="color:var(--gold); font-size:0.7rem; letter-spacing:0.12em; font-family:'Cinzel',serif; font-style:normal;">THE ANCIENT BRIDGE</span><br/>
+          <span style="color:rgba(200,184,154,0.8);">Objects only. Never hands. No skin may touch. No hand may shake. Respect crosses here. Not people.</span>
+        </div>
+      </div>
+
+      <!-- Hotspot: River of Blood -->
+      <div class="map-hotspot" style="top:68%; left:48%;" data-lore="river-blood">
+        <div class="map-hotspot-ring" style="border-color:var(--blood-bright); background:rgba(102,0,0,0.15);">
+          <div style="width:6px;height:6px;background:var(--blood-bright);border-radius:50%;"></div>
+        </div>
+        <div class="lore-tooltip" style="border-color:rgba(139,26,26,0.4);">
+          <span style="color:var(--blood-bright); font-size:0.7rem; letter-spacing:0.12em; font-family:'Cinzel',serif; font-style:normal;">THE RIVER OF BLOOD</span><br/>
+          <span style="color:rgba(200,184,154,0.8);">What the river holds is not water. Those who survive do not forget what they drank to remain living.</span>
+        </div>
+      </div>
+
+      <!-- Hotspot: Solaria -->
+      <div class="map-hotspot" style="top:35%; left:22%;" data-lore="solaria">
+        <div class="map-hotspot-ring" style="border-color:#D4A855; background:rgba(212,168,85,0.1);">
+          <div style="width:6px;height:6px;background:#D4A855;border-radius:50%;"></div>
+        </div>
+        <div class="lore-tooltip" style="border-color:rgba(212,168,85,0.35);">
+          <span style="color:#D4A855; font-size:0.7rem; letter-spacing:0.12em; font-family:'Cinzel',serif; font-style:normal;">SOLARIA</span><br/>
+          <span style="color:rgba(200,184,154,0.8);">Land of Light, Growth, and Living Things. The curse could not root here. Some believe this was mercy. Others believe it was design.</span>
+        </div>
+      </div>
+
+      <!-- Hotspot: Aurelia -->
+      <div class="map-hotspot" style="top:28%; left:72%;" data-lore="aurelia">
+        <div class="map-hotspot-ring" style="border-color:var(--emerald-bright); background:rgba(74,155,110,0.1);">
+          <div style="width:6px;height:6px;background:var(--emerald-bright);border-radius:50%;"></div>
+        </div>
+        <div class="lore-tooltip" style="border-color:rgba(74,155,110,0.35);">
+          <span style="color:var(--emerald-bright); font-size:0.7rem; letter-spacing:0.12em; font-family:'Cinzel',serif; font-style:normal;">AURELIA</span><br/>
+          <span style="color:rgba(200,184,154,0.8);">Land Preserved. Not Living. Beauty without Life. The rain falls. It does not nourish. The trees stand. They do not grow.</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Lore Fragment Display -->
+    <div class="lore-fragment-box fade-in mt-0" id="lore-display" style="border-top:none;">
+      <span style="color:rgba(200,184,154,0.35); font-size:0.85rem;">Hover over a location on the map to access the surviving record fragment.</span>
+    </div>
+
+    <!-- Map lore notes -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8 fade-in">
+      <div class="glass-panel p-4 text-center">
+        <div class="title-mono text-xs mb-2" style="color:var(--gold-dim); letter-spacing:0.15em;">THRESHOLD LAW</div>
+        <p class="title-fell" style="font-size:0.88rem; font-style:italic; color:rgba(200,184,154,0.7); line-height:1.6;">Objects only. Never hands.</p>
+      </div>
+      <div class="glass-panel p-4 text-center">
+        <div class="title-mono text-xs mb-2" style="color:var(--gold-dim); letter-spacing:0.15em;">HAND VEILS</div>
+        <p class="title-fell" style="font-size:0.88rem; font-style:italic; color:rgba(200,184,154,0.7); line-height:1.6;">Worn when handling foreign objects. Burned after use.</p>
+      </div>
+      <div class="glass-panel p-4 text-center">
+        <div class="title-mono text-xs mb-2" style="color:var(--gold-dim); letter-spacing:0.15em;">THE BORDER</div>
+        <p class="title-fell" style="font-size:0.88rem; font-style:italic; color:rgba(200,184,154,0.7); line-height:1.6;">Respect crosses here. Not people.</p>
+      </div>
+      <div class="glass-panel p-4 text-center">
+        <div class="title-mono text-xs mb-2" style="color:var(--gold-dim); letter-spacing:0.15em;">ARCHIVAL NOTE</div>
+        <p class="title-fell" style="font-size:0.88rem; font-style:italic; color:rgba(200,184,154,0.7); line-height:1.6;">What remains is only what was allowed to survive.</p>
+      </div>
+    </div>
+
+    <div class="map-cta-panel fade-in corner-border">
+      <div class="section-label mb-3">Start The Record</div>
+      <p class="title-fell mb-5" style="font-size:1.05rem; line-height:1.75;">The map is spoiler-safe, but the story begins in Book One.</p>
+      <a href="https://www.amazon.com/Aurelian-Secrets-Selene-Bridge-Chronicles-ebook/dp/B0H1LLWYWM" target="_blank" class="cta-btn" style="padding:9px 22px; font-size:0.58rem;">Read Book One</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- RIVER OF BLOOD DIVIDER -->
+<div class="river-divider" data-parallax="0.35">
+  <div class="river-inner" id="river-div-1">
+    <div class="river-stream"></div>
+    <div class="river-stream mid"></div>
+    <div class="river-stream"></div>
+    <div class="river-label">✦ &nbsp; THE RIVER OF BLOOD &nbsp; ✦</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- SECTION 3: BORDER CUSTOMS MANIFEST -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="manifest" class="py-28 px-4 md:px-10 relative overflow-hidden" style="background: linear-gradient(to bottom, var(--obsidian) 0%, #0e0a0a 50%, var(--obsidian) 100%);">
+
+  <div class="ambient-blood" style="top:50%; right:-100px; transform:translateY(-50%);"></div>
+
+  <div style="max-width:1100px; margin:0 auto;">
+
+    <div class="text-center mb-14 fade-in">
+      <div class="section-label mb-3">Series Dossier - Principal Figures</div>
+      <h2 class="title-display" style="font-size:clamp(1.6rem,4vw,3rem); color:var(--parchment); font-weight:400; letter-spacing:0.1em;">
+        Two Lives At The Border
+      </h2>
+      <p class="title-fell mt-3" style="font-style:italic; color:rgba(200,184,154,0.55); font-size:1.05rem; max-width:760px; margin-left:auto; margin-right:auto; line-height:1.8;">
+        A spoiler-safe introduction to the central figures of Aurelian Secrets of Selene: a Solarian aide raised under a living sun, and an Aurelian thief shaped by a kingdom that preserves beauty without life.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-10 items-start">
+
+      <div class="fade-in">
+        <div class="portrait-frame corner-border">
+          <img src="character-journal-spread.jpg" alt="Selene, Solarian Aide" style="aspect-ratio:4/5; object-fit:cover; object-position:left center;" />
+          <div class="portrait-label">
+            <div class="title-mono mb-1" style="font-size:0.55rem; letter-spacing:0.2em; color:var(--gold-dim);">SUBJECT FILE</div>
+            <div class="title-display" style="font-size:0.95rem; letter-spacing:0.15em; color:var(--parchment);">SELENE</div>
+            <div class="title-mono" style="font-size:0.55rem; letter-spacing:0.18em; color:rgba(200,184,154,0.5);">SOLARIAN AIDE</div>
+          </div>
+        </div>
+        <div class="glass-panel p-6 mt-5 corner-border">
+          <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">PROFILE NOTES</div>
+          <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.75); font-size:1rem; line-height:1.8;">
+            Selene belongs to Solaria, a realm of warmth, growth, ceremony, and living things. Her work places her near the rules that keep the border intact, and near the questions those rules were never built to answer.
+          </p>
+          <hr class="blood-rule my-5" />
+          <div class="grid grid-cols-2 gap-4 title-mono text-xs" style="color:rgba(200,184,154,0.48); letter-spacing:0.14em;">
+            <span>REALM: SOLARIA</span>
+            <span>ARCHIVE: ACTIVE</span>
+            <span>SYMBOLS: LIGHT / GROWTH</span>
+            <span>STATUS: SPOILER SAFE</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="fade-in">
+        <div class="portrait-frame corner-border">
+          <img src="character-journal-spread.jpg" alt="Denovian, Aurelian Thief" style="aspect-ratio:4/5; object-fit:cover; object-position:right center; filter:sepia(0.4) brightness(0.75);" />
+          <div class="portrait-label">
+            <div class="title-mono mb-1" style="font-size:0.55rem; letter-spacing:0.2em; color:var(--gold-dim);">SUBJECT FILE</div>
+            <div class="title-display" style="font-size:0.95rem; letter-spacing:0.15em; color:var(--parchment);">DENOVIAN</div>
+            <div class="title-mono" style="font-size:0.55rem; letter-spacing:0.18em; color:rgba(200,184,154,0.5);">AURELIAN THIEF</div>
+          </div>
+        </div>
+        <div class="glass-panel p-6 mt-5 corner-border">
+          <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">PROFILE NOTES</div>
+          <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.75); font-size:1rem; line-height:1.8;">
+            Denovian comes from Aurelia, a realm preserved in cold splendor. His reputation moves ahead of him, but the series is less interested in labels than in what a person becomes when a kingdom teaches survival as inheritance.
+          </p>
+          <hr class="blood-rule my-5" />
+          <div class="grid grid-cols-2 gap-4 title-mono text-xs" style="color:rgba(200,184,154,0.48); letter-spacing:0.14em;">
+            <span>REALM: AURELIA</span>
+            <span>ARCHIVE: RESTRICTED</span>
+            <span>SYMBOLS: SHADOW / MEMORY</span>
+            <span>STATUS: SPOILER SAFE</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="glass-panel p-7 mt-10 fade-in corner-border" style="border-color:rgba(201,168,76,0.22); text-align:center;">
+      <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.24em;">STORY VOICE</div>
+      <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.82); font-size:clamp(1.15rem,2.6vw,1.75rem); line-height:1.8; max-width:820px; margin:0 auto;">
+        "When souls recognize each other, mine saw yours and immediately forgot how to leave."
+      </p>
+      <div class="title-mono mt-4 text-xs" style="color:rgba(200,184,154,0.35); letter-spacing:0.16em;">FOUND IN SECTION 78-B · DAMAGED</div>
+    </div>
+
+    <div class="glass-panel p-7 mt-10 fade-in corner-border">
+      <div class="title-mono text-xs mb-3" style="color:var(--emerald-bright); letter-spacing:0.2em;">SERIES TONE</div>
+      <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.72); font-size:1.1rem; line-height:1.9;">
+        Dark fantasy romance, forbidden proximity, archival mysteries, kingdom politics, cursed borders, and the slow pressure of two histories that were never meant to touch.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- RIVER OF BLOOD DIVIDER -->
+<div class="river-divider" data-parallax="0.45">
+  <div class="river-inner" id="river-div-2">
+    <div class="river-stream"></div>
+    <div class="river-stream mid"></div>
+    <div class="river-stream"></div>
+    <div class="river-label">✦ &nbsp; THE RIVER OF BLOOD &nbsp; ✦</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- SECTION 3.4: THRESHOLD BOX SIMULATOR -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="threshold-sim" class="py-24 px-4 md:px-10 relative overflow-hidden" style="background: linear-gradient(to bottom, var(--obsidian) 0%, #0a0608 100%);">
+
+  <div class="ambient-blood" style="top:50%; left:50%; transform:translate(-50%,-50%);"></div>
+
+  <div style="max-width:980px; margin:0 auto; position:relative; z-index:2;">
+    <div class="text-center mb-12 fade-in">
+      <div class="section-label mb-3">World Guide - Border Customs</div>
+      <h2 class="title-display" style="font-size:clamp(1.4rem,3.5vw,2.4rem); color:var(--parchment); font-weight:400; letter-spacing:0.1em;">
+        The Threshold Box Protocol
+      </h2>
+      <p class="title-fell mt-3" style="font-style:italic; color:rgba(200,184,154,0.55); font-size:1.05rem; line-height:1.8; max-width:680px; margin:12px auto 0;">
+        The border between Solaria and Aurelia is not only geographic. It is ritual, law, superstition, and memory. The threshold box exists because the first rule is absolute: objects only, never hands.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-5 fade-in">
+      <div class="glass-panel corner-border p-6">
+        <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">RULE I</div>
+        <h3 class="title-display mb-3" style="font-size:1rem; color:var(--parchment); letter-spacing:0.12em;">NO SKIN MAY TOUCH</h3>
+        <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.68); font-size:0.98rem; line-height:1.8;">
+          Contact across the border is treated as contamination, not intimacy. The law makes distance physical.
+        </p>
+      </div>
+      <div class="glass-panel corner-border p-6">
+        <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">RULE II</div>
+        <h3 class="title-display mb-3" style="font-size:1rem; color:var(--parchment); letter-spacing:0.12em;">OBJECTS ONLY</h3>
+        <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.68); font-size:0.98rem; line-height:1.8;">
+          Messages, tokens, and official materials pass through sanctioned containers. Intent does not excuse procedure.
+        </p>
+      </div>
+      <div class="glass-panel corner-border p-6">
+        <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">RULE III</div>
+        <h3 class="title-display mb-3" style="font-size:1rem; color:var(--parchment); letter-spacing:0.12em;">HAND VEILS REQUIRED</h3>
+        <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.68); font-size:0.98rem; line-height:1.8;">
+          Veils are not decoration. They are proof that the body did not claim what the border allowed to pass.
+        </p>
+      </div>
+    </div>
+
+    <div class="glass-panel p-7 mt-8 fade-in corner-border" style="border-color:rgba(201,168,76,0.22);">
+      <div class="title-mono text-xs mb-3" style="color:var(--emerald-bright); letter-spacing:0.2em;">ARCHIVAL NOTE</div>
+      <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.72); font-size:1.05rem; line-height:1.9;">
+        The threshold box is one of the series' central images: a beautiful, bureaucratic object built to make longing obey the law.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- RIVER OF BLOOD DIVIDER -->
+<div class="river-divider" data-parallax="0.3">
+  <div class="river-inner" id="river-div-3">
+    <div class="river-stream"></div>
+    <div class="river-stream mid"></div>
+    <div class="river-stream"></div>
+    <div class="river-label">✦ &nbsp; THE RIVER OF BLOOD &nbsp; ✦</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- SECTION 3.5: TWO SOULS. ONE BOND. — SOUNDSCAPE -->
+<!-- ════════════════════════════════════════════════════ -->
+<!-- ════════════════════════════════════════════════════ -->
+<!-- SECTION 3.6: SPOILER-SAFE SERIES THEMES -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="memory-sync" class="py-28 px-4 md:px-10 relative overflow-hidden" style="background: linear-gradient(to bottom, #06060a 0%, #0a080c 100%);">
+  <div class="ambient-gold" style="top:20%; right:-120px;"></div>
+  <div style="max-width:960px; margin:0 auto; position:relative; z-index:2;">
+    <div class="text-center mb-12 fade-in">
+      <div class="section-label mb-3">Reader Guide - Spoiler Safe Themes</div>
+      <h2 class="title-display" style="font-size:clamp(1.5rem,4vw,2.8rem); color:var(--parchment); font-weight:400; letter-spacing:0.1em;">
+        What The Series Is About
+      </h2>
+      <p class="title-fell mt-3" style="font-style:italic; color:rgba(200,184,154,0.55); font-size:1.05rem; line-height:1.8; max-width:720px; margin-left:auto; margin-right:auto;">
+        No plot turns, no ending explanations - only the emotional architecture of the world.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-6">
+      <div class="glass-panel p-7 corner-border fade-in">
+        <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">THEME FILE 01</div>
+        <h3 class="title-display mb-3" style="font-size:1.05rem; color:var(--parchment); letter-spacing:0.12em;">PRESERVATION VS LIFE</h3>
+        <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.7); line-height:1.85; font-size:1rem;">
+          Solaria grows. Aurelia endures. The series asks what is lost when a kingdom confuses survival with stillness.
+        </p>
+      </div>
+      <div class="glass-panel p-7 corner-border fade-in">
+        <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">THEME FILE 02</div>
+        <h3 class="title-display mb-3" style="font-size:1.05rem; color:var(--parchment); letter-spacing:0.12em;">RECORDS AND MEMORY</h3>
+        <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.7); line-height:1.85; font-size:1rem;">
+          The archives preserve fragments, but fragments are not the same as truth. Every record carries the pressure of the person who kept it.
+        </p>
+      </div>
+      <div class="glass-panel p-7 corner-border fade-in">
+        <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">THEME FILE 03</div>
+        <h3 class="title-display mb-3" style="font-size:1.05rem; color:var(--parchment); letter-spacing:0.12em;">FORBIDDEN PROXIMITY</h3>
+        <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.7); line-height:1.85; font-size:1rem;">
+          The romance lives inside restraint: veils, thresholds, rules, silence, and the danger of wanting what the world forbids.
+        </p>
+      </div>
+      <div class="glass-panel p-7 corner-border fade-in">
+        <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">THEME FILE 04</div>
+        <h3 class="title-display mb-3" style="font-size:1.05rem; color:var(--parchment); letter-spacing:0.12em;">KINGDOMS AS WOUNDS</h3>
+        <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.7); line-height:1.85; font-size:1rem;">
+          Solaria and Aurelia are not simple opposites. They are two answers to an old fracture, each beautiful, each incomplete.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RIVER OF BLOOD DIVIDER -->
+<div class="river-divider" data-parallax="0.4">
+  <div class="river-inner">
+    <div class="river-stream"></div>
+    <div class="river-stream mid"></div>
+    <div class="river-stream"></div>
+    <div class="river-label">✦ &nbsp; THE RIVER OF BLOOD &nbsp; ✦</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- SECTION 3.7: RESTRICTED ARCHIVE DASHBOARD -->
+<!-- ════════════════════════════════════════════════════ -->
+<!-- RIVER OF BLOOD DIVIDER -->
+<div class="river-divider" data-parallax="0.5">
+  <div class="river-inner" id="river-div-4">
+    <div class="river-stream"></div>
+    <div class="river-stream mid"></div>
+    <div class="river-stream"></div>
+    <div class="river-label">✦ &nbsp; THE RIVER OF BLOOD &nbsp; ✦</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- SECTION 4: THE RESTRICTED SHELVES -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="archives" class="py-28 px-4 md:px-10 relative overflow-hidden" style="background: linear-gradient(180deg, var(--obsidian) 0%, #08080A 100%);">
+
+  <div class="ambient-gold" style="bottom:-200px; right:-200px;"></div>
+
+  <div style="max-width:1100px; margin:0 auto;">
+
+    <div class="text-center mb-14 fade-in">
+      <div class="section-label mb-3">Section IV · Concord Sealed · Access Restricted</div>
+      <h2 class="title-display" style="font-size:clamp(1.6rem,4vw,3rem); color:var(--parchment); font-weight:400; letter-spacing:0.1em;">
+        The Restricted Shelves
+      </h2>
+      <p class="title-fell mt-3" style="font-style:italic; color:rgba(200,184,154,0.5); font-size:1rem;">
+        The series shelf keeps Book One visible and the next records sealed. Joining the dispatch signs you up for series updates and sends the Archive Code for the restricted Book Two archive.
+      </p>
+      <div class="title-mono mt-4 text-xs" style="color:var(--blood-mid); letter-spacing:0.15em;">
+        ⚠ UNAUTHORIZED ACCESS WILL BE RECORDED — 412 A.C. ⚠
+      </div>
+    </div>
+
+    <div class="shelf-intro-note">Begin with Book One. The next records are sealed.</div>
+
+    <div class="conversion-strip fade-in corner-border">
+      <p>New readers start with Book One. Any reader can join the series dispatch; the welcome email sends the Archive Code for the restricted visual.</p>
+      <div class="conversion-actions">
+        <a href="https://www.amazon.com/Aurelian-Secrets-Selene-Bridge-Chronicles-ebook/dp/B0H1LLWYWM" target="_blank" class="cta-btn" style="padding:9px 18px; font-size:0.56rem;">Start Book One</a>
+        <a href="#unlock-newsletter-form" class="cta-btn" style="padding:9px 18px; font-size:0.56rem; background:rgba(201,168,76,0.04);">Join Series Dispatch</a>
+      </div>
+    </div>
+
+    <!-- SERIES BOOK LINEUP -->
+    <div class="old-shelf mb-14 fade-in">
+    <div class="shelf-books grid md:grid-cols-3 gap-7">
+
+      <div class="shelf-book archive-card" style="min-height:0; border-color:rgba(201,168,76,0.46); box-shadow:0 0 70px rgba(201,168,76,0.16), 0 28px 60px rgba(0,0,0,0.65);">
+        <div class="p-5 border-b" style="border-color:rgba(201,168,76,0.18);">
+          <div class="title-mono text-xs mb-2" style="color:var(--gold); letter-spacing:0.24em;">START HERE</div>
+          <div class="title-mono text-xs mb-1" style="color:var(--gold-dim); letter-spacing:0.2em;">BOOK ONE · AVAILABLE NOW</div>
+          <h3 class="title-display" style="font-size:1rem; color:var(--parchment); letter-spacing:0.12em; font-weight:400;">Whose Blood Built the Bridge</h3>
+        </div>
+        <div class="p-5">
+          <img src="book-one-cover.jpg" alt="Aurelian Secrets of Selene Book One cover" style="width:100%; aspect-ratio:2/3; object-fit:cover; border:1px solid rgba(201,168,76,0.42); box-shadow:0 0 42px rgba(201,168,76,0.16), 0 24px 60px rgba(0,0,0,0.55);" />
+          <p class="title-fell mt-5" style="font-style:italic; color:rgba(200,184,154,0.65); font-size:0.95rem; line-height:1.7;">
+            The opening record of Solaria, Aurelia, the bridge, and the rule no one is allowed to break.
+          </p>
+          <a href="https://www.amazon.com/Aurelian-Secrets-Selene-Bridge-Chronicles-ebook/dp/B0H1LLWYWM" target="_blank" class="cta-btn mt-5" style="display:inline-block; padding:8px 18px; font-size:0.58rem;">Read Book One</a>
+        </div>
+      </div>
+
+      <div class="shelf-book archive-card glow-blood" style="min-height:0; transform:translateY(-8px);">
+        <div class="p-5 border-b" style="border-color:rgba(201,168,76,0.12);">
+          <div class="title-mono text-xs mb-1" style="color:var(--blood-mid); letter-spacing:0.2em;">BOOK TWO · RESTRICTED</div>
+          <h3 class="title-display glitch-title" style="font-size:1rem; color:var(--parchment); letter-spacing:0.12em; font-weight:400;">
+            <span class="redacted glitch-text">████████ ██ ███████</span>
+          </h3>
+        </div>
+        <div style="position:relative; overflow:hidden;">
+          <img src="archives.jpg" alt="Book Two restricted placeholder" style="width:100%; aspect-ratio:2/3; object-fit:cover; filter:blur(8px) brightness(0.35) grayscale(0.5);" />
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(8,8,10,0.45);">
+            <div class="title-mono text-xs" style="color:var(--gold); letter-spacing:0.24em; border:1px solid rgba(201,168,76,0.28); padding:10px 16px; background:rgba(0,0,0,0.55);">CONCORD SEALED</div>
+          </div>
+        </div>
+        <div class="p-5">
+          <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.55); font-size:0.95rem; line-height:1.7;">
+            The next record remains sealed for readers who have crossed the end of Book One.
+          </p>
+        </div>
+      </div>
+
+      <div class="shelf-book archive-card double-locked" style="min-height:0; position:relative; transform:translateY(8px) rotate(1deg);">
+        <div class="double-locked-overlay"></div>
+        <div class="p-5 border-b" style="border-color:rgba(201,168,76,0.08); position:relative; z-index:2;">
+          <div class="title-mono text-xs mb-1" style="color:rgba(139,26,26,0.5); letter-spacing:0.2em;">BOOK THREE · DOUBLE LOCKED</div>
+          <h3 class="title-display glitch-title" style="font-size:1rem; color:rgba(200,184,154,0.35); letter-spacing:0.12em; font-weight:400;">
+            <span class="glitch-text">████████ ██████ ███</span>
+          </h3>
+        </div>
+        <div style="position:relative; overflow:hidden;">
+          <img src="archives.jpg" alt="Book Three restricted placeholder" style="width:100%; aspect-ratio:2/3; object-fit:cover; filter:blur(14px) brightness(0.24) grayscale(1);" />
+          <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(8,8,10,0.58);">
+            <div class="title-mono text-xs" style="color:rgba(200,184,154,0.35); letter-spacing:0.24em; border:1px solid rgba(200,184,154,0.12); padding:10px 16px; background:rgba(0,0,0,0.55);">AWAITING BOOK TWO</div>
+          </div>
+        </div>
+        <div class="p-5" style="position:relative; z-index:2;">
+          <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.32); font-size:0.95rem; line-height:1.7;">
+            The final record remains sealed until the next crossing is complete.
+          </p>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+    <!-- ARCHIVE CARDS GRID -->
+    <div class="grid md:grid-cols-2 gap-8">
+
+      <!-- ─── CARD A: BOOK TWO ─── -->
+      <div class="archive-card fade-in glow-blood" style="min-height:820px;">
+
+        <!-- Header -->
+        <div class="p-6 border-b" style="border-color:rgba(201,168,76,0.15);">
+          <div class="title-mono text-xs mb-1" style="color:var(--blood-mid); letter-spacing:0.2em;">RESTRICTED ARCHIVE · RECORD #02</div>
+          <h3 class="title-display glitch-title" style="font-size:1.1rem; color:var(--parchment); letter-spacing:0.12em; font-weight:400;">
+            <span class="redacted glitch-text" title="Click to attempt reveal" id="b2-glitch-title">████████ ██ ███████</span><br/>
+            <span style="font-size:0.8rem; color:var(--gold-dim); letter-spacing:0.15em;">THE MEMORY OF BETRAYAL</span>
+          </h3>
+        </div>
+
+        <!-- Image zone -->
+        <div id="book2-image-zone" style="position:relative; height:260px; overflow:hidden; background:#050507;">
+          <img src="book-two-restricted-reveal.png" alt="Restricted Book Two visual record" style="width:100%; height:100%; object-fit:cover; filter:blur(18px) brightness(0.22) grayscale(0.8); transform:scale(1.08);" id="book2-locked-img" />
+          <img src="book-two-restricted-reveal.png" alt="Book Two restricted visual record" style="width:100%; height:100%; object-fit:cover; display:none; transition:opacity 1s;" id="book2-unlocked-img" />
+        </div>
+
+        <!-- Lock Overlay -->
+        <div class="lock-overlay p-6" id="lock-overlay-b2">
+          <div class="title-mono text-xs mb-4" style="color:var(--blood-mid); letter-spacing:0.2em; text-align:center;">
+            CONCORD SEALED · LEVEL IV RESTRICTION
+          </div>
+
+          <div style="font-size:3rem; margin-bottom:16px; color:rgba(200,184,154,0.3);">⚿</div>
+
+                    <p class="title-fell mb-6" style="font-style:italic; color:rgba(200,184,154,0.6); font-size:0.92rem; text-align:center; line-height:1.7; max-width:340px;">
+            Archive access is issued through the secure dispatch. Confirm your request, then return with the code sealed inside your welcome letter. The code only unlocks the restricted Book Two archive.
+          </p>
+
+          <div class="archive-signup-card">
+            <div class="terminal-label">Secure Dispatch Terminal</div>
+            <h4>Join the Series Dispatch</h4>
+            <p class="signup-copy">Receive release alerts, countdowns, paperback news, reader polls, and the Archive Code for this restricted record.</p>
+            <form class="archive-signup-form" action="https://assets.mailerlite.com/jsonp/2414554/forms/189637192339949366/subscribe" method="post" target="mailerlite-submit-frame" onsubmit="handleMailerLiteSubmit(event, 'gate-dispatch-confirm')">
+              <input aria-label="Email address" aria-required="true" type="email" class="email-input" name="fields[email]" placeholder="reader@example.com" autocomplete="email" required />
+              <label class="consent-row mb-3">
+                <input type="checkbox" required />
+                <span>I agree to receive Aurelian Secrets of Selene series updates, release alerts, countdowns, paperback or physical copy news, reader polls, and occasional promotions from Hyacinth Kaye Bajuyo. I can unsubscribe anytime.</span>
+              </label>
+              <input type="hidden" name="ml-submit" value="1" />
+              <input type="hidden" name="anticsrf" value="true" />
+              <button type="submit" class="email-btn">Join the Dispatch</button>
+            </form>
+            <div id="gate-dispatch-confirm" class="email-confirm">Dispatch request sent. Check your inbox to confirm subscription.</div>
+          </div>
+
+          <div class="w-full" style="max-width:340px;">
+            <form id="unlock-newsletter-form" onsubmit="event.preventDefault(); attemptUnlock();" class="flex flex-col gap-3">
+              <input type="hidden" name="tag" value="book2-reader-portal" />
+              <div class="title-mono text-xs" style="color:var(--gold-dim); letter-spacing:0.12em;">ENTER ARCHIVE CODE <span class="cursor-blink"></span></div>
+              <input type="password" class="terminal-input" id="pw-input" placeholder="_ _ _ _ _ _ _" autocomplete="off" required />
+              <button type="submit" class="terminal-btn" id="pw-submit">DECRYPT ARCHIVE</button>
+            </form>
+            <div class="error-msg" id="pw-error"></div>
+          </div>
+        </div>
+
+        <!-- Unlocked Content (hidden until correct password) -->
+        <div id="book2-reveal" class="p-7">
+
+          <div class="title-mono text-xs mb-4" style="color:var(--emerald-bright); letter-spacing:0.2em;">
+            ✓ ARCHIVE DECRYPTED · RECORD #02 ACCESSED
+          </div>
+
+          <hr class="blood-rule mb-5" />
+
+          <p class="title-fell mb-3" style="font-size:1.05rem; color:rgba(201,168,76,0.78); font-style:italic; letter-spacing:0.02em; font-weight:400; line-height:1.7;">
+            The record has opened. The truth has not.
+          </p>
+
+          <hr class="blood-rule mb-5" />
+
+          <div class="glass-panel p-5" style="border-color:rgba(201,168,76,0.3);">
+            <div class="title-mono text-xs mb-3" style="color:var(--gold-dim); letter-spacing:0.2em;">⚿ SECURE YOUR PASSAGE</div>
+            <p class="title-fell mb-4" style="font-size:0.92rem; font-style:italic; color:rgba(200,184,154,0.6); line-height:1.6;">
+              Book Two is coming. Be the first to receive the record when the archive unseals.
+            </p>
+            <div class="archive-signup-card">
+              <div class="terminal-label">Secure Dispatch Terminal</div>
+              <h4>Join the Series Dispatch</h4>
+              <p class="signup-copy">Receive Book Two release news, countdowns, paperback updates, reader polls, and occasional author dispatches.</p>
+              <form class="archive-signup-form" action="https://assets.mailerlite.com/jsonp/2414554/forms/189637192339949366/subscribe" method="post" target="mailerlite-submit-frame" onsubmit="handleMailerLiteSubmit(event, 'book2-confirm')">
+                <input aria-label="Email address" aria-required="true" type="email" class="email-input" name="fields[email]" placeholder="reader@example.com" autocomplete="email" required />
+                <label class="consent-row mb-3">
+                  <input type="checkbox" required />
+                  <span>I agree to receive Aurelian Secrets of Selene series updates, release alerts, countdowns, paperback or physical copy news, reader polls, and occasional promotions from Hyacinth Kaye Bajuyo. I can unsubscribe anytime.</span>
+                </label>
+                <input type="hidden" name="ml-submit" value="1" />
+                <input type="hidden" name="anticsrf" value="true" />
+                <button type="submit" class="email-btn">Secure Your Passage</button>
+              </form>
+            </div>
+            <div id="book2-confirm" class="title-mono text-xs mt-2" style="color:var(--emerald-bright); display:none; letter-spacing:0.12em;">✓ Your passage has been secured. The archive will find you.</div>
+          </div>
+
+          <figure class="book2-full-reveal">
+            <img src="book-two-restricted-reveal.png" alt="Restricted Book Two visual record" />
+            <figcaption>
+              <span>The Aurelian Prince</span>
+              <small>Recovered Visual Record · Access Granted</small>
+            </figcaption>
+          </figure>
+
+        </div>
+
+      </div><!-- end card A -->
+
+      <!-- ─── CARD B: BOOK THREE ─── -->
+      <div class="archive-card fade-in double-locked" style="min-height:640px; position:relative;">
+
+        <!-- Hatch overlay -->
+        <div class="double-locked-overlay"></div>
+
+        <!-- Lock icon overlay -->
+        <div style="position:absolute; inset:0; z-index:5; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:2rem; background:rgba(8,8,10,0.55);">
+
+          <div style="font-size:2.5rem; color:rgba(200,184,154,0.2); margin-bottom:12px;">⚿⚿</div>
+          <div class="title-mono text-xs mb-2" style="color:rgba(200,184,154,0.25); letter-spacing:0.22em;">SYSTEM STATUS</div>
+          <div class="title-mono text-xs mb-6" style="color:var(--blood-mid); letter-spacing:0.15em;">AWAITING BOOK TWO SYNCHRONIZATION</div>
+          <div class="title-fell mb-2" style="font-style:italic; color:rgba(200,184,154,0.2); font-size:0.9rem; line-height:1.6;">The promise remains unwritten.</div>
+        </div>
+
+        <!-- Header (visible but muted) -->
+        <div class="p-6 border-b" style="border-color:rgba(201,168,76,0.08);">
+          <div class="title-mono text-xs mb-1" style="color:rgba(139,26,26,0.4); letter-spacing:0.2em;">RESTRICTED ARCHIVE · RECORD #03</div>
+          <h3 class="title-display glitch-title" style="font-size:1.1rem; color:rgba(200,184,154,0.3); letter-spacing:0.12em; font-weight:400;">
+            <span class="glitch-text" id="b3-glitch-title">████████ ██████ ███</span><br/>
+            <span style="font-size:0.8rem; letter-spacing:0.15em;">THE ULTIMATE ACT</span>
+          </h3>
+        </div>
+
+        <!-- Blurred image zone -->
+        <div style="height:260px; overflow:hidden; background:#050507;">
+          <img src="archives.jpg" alt="Book Three Archive" style="width:100%; height:100%; object-fit:cover; filter:blur(12px) brightness(0.25) grayscale(1);" />
+        </div>
+
+        <!-- Faded teaser text (visible but obscured) -->
+        <div class="p-7" style="position:relative; z-index:3;">
+
+          <div class="faded-text mb-5">
+            <p class="title-display mb-2" style="font-size:1.05rem; color:rgba(200,184,154,0.3); letter-spacing:0.08em; font-weight:400; line-height:1.4;">
+              "The final record remains sealed until the next crossing is complete."
+            </p>
+            <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.2); font-size:0.9rem; line-height:1.7;">
+              The final record is sealed behind what Book Two has yet to reveal. Some stories do not end. They are completed.
+            </p>
+          </div>
+
+          <hr style="border:none; height:1px; background:rgba(102,0,0,0.2); margin-bottom:1.25rem;" />
+
+          <div class="glass-panel p-5" style="border-color:rgba(201,168,76,0.1); position:relative; z-index:3;">
+            <div class="title-mono text-xs mb-3" style="color:rgba(200,184,154,0.25); letter-spacing:0.2em;">⚿ INNER CIRCLE ACCESS</div>
+            <p class="title-fell mb-4" style="font-size:0.9rem; font-style:italic; color:rgba(200,184,154,0.3); line-height:1.6;">
+              The final act has no release date. Only those already watching will know when it comes.
+            </p>
+            <div class="archive-signup-card book3-sealed-terminal" style="opacity:0.72;">
+              <div class="terminal-label">Inner Circle Dispatch</div>
+              <h4>Join the Series Dispatch</h4>
+              <p class="signup-copy">Receive final-act news only when the next records begin to open.</p>
+              <form class="archive-signup-form" action="https://assets.mailerlite.com/jsonp/2414554/forms/189637192339949366/subscribe" method="post" target="mailerlite-submit-frame" onsubmit="handleMailerLiteSubmit(event, 'book3-confirm')">
+                <input aria-label="Email address" aria-required="true" type="email" class="email-input" name="fields[email]" placeholder="reader@example.com" autocomplete="email" required />
+                <label class="consent-row mb-3">
+                  <input type="checkbox" required />
+                  <span>I agree to receive Aurelian Secrets of Selene series updates, release alerts, countdowns, paperback or physical copy news, reader polls, and occasional promotions from Hyacinth Kaye Bajuyo. I can unsubscribe anytime.</span>
+                </label>
+                <input type="hidden" name="ml-submit" value="1" />
+                <input type="hidden" name="anticsrf" value="true" />
+                <button type="submit" class="email-btn">Join the Inner Circle</button>
+              </form>
+            </div>
+            <div id="book3-confirm" class="title-mono text-xs mt-2" style="color:var(--emerald-bright); display:none; letter-spacing:0.12em;">✓ You have been added to the Inner Circle.</div>
+          </div>
+
+        </div>
+
+      </div><!-- end card B -->
+
+    </div><!-- end grid -->
+
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- FOOTER -->
+<!-- ════════════════════════════════════════════════════ -->
+<section id="dashboard" class="py-24 px-4 md:px-10 relative overflow-hidden" style="background: linear-gradient(to bottom, #06060a 0%, var(--obsidian) 100%);">
+  <div class="ambient-blood" style="top:0; left:-100px;"></div>
+  <div style="max-width:1100px; margin:0 auto;">
+    <div class="text-center mb-12 fade-in">
+      <div class="optional-scan-badge">Optional Lore Scan</div>
+      <div class="section-label mb-3">Archive Scan - Spoiler Safe</div>
+      <h2 class="title-display" style="font-size:clamp(1.5rem,3.8vw,2.7rem); color:var(--parchment); font-weight:400; letter-spacing:0.1em;">The Hidden Archives</h2>
+      <p class="title-fell mt-3" style="font-style:italic; color:rgba(200,184,154,0.5); font-size:1rem; line-height:1.7; max-width:720px; margin-left:auto; margin-right:auto;">
+        Optional: scan recovered archive fragments for spoiler-safe lore. No major plot turns are shown here.
+      </p>
+    </div>
+    <div class="dashboard-img-zone fade-in" id="archive-dashboard" style="max-width:900px; margin:0 auto;">
+      <img src="archives.jpg" alt="Restricted Archive Dashboard" style="width:100%; display:block; border:1px solid rgba(201,168,76,0.2);" />
+      <div class="dash-hotspot" style="top:5%; left:3%; width:22%; height:55%;" onclick="openSidebar('selene')" data-zone="selene"><div class="dash-label">SELENE FRAGMENT - FILE INCOMPLETE</div></div>
+      <div class="dash-hotspot" style="top:4%; left:28%; width:40%; height:60%;" onclick="openSidebar('concord')" data-zone="concord"><div class="dash-label">RESTRICTED ARCHIVE - CONCORD SEALED</div></div>
+      <div class="dash-hotspot" style="top:4%; left:70%; width:28%; height:55%;" onclick="openSidebar('denovian')" data-zone="denovian"><div class="dash-label">REMOVED ENTRY - RECORD EXPUNGED</div></div>
+      <div class="dash-hotspot" style="top:65%; left:68%; width:30%; height:33%;" onclick="openSidebar('erasure')" data-zone="erasure"><div class="dash-label">ERASURE LOG - 412 A.C.</div></div>
+      <div class="dash-hotspot" style="top:65%; left:2%; width:22%; height:33%;" onclick="openSidebar('recovery')" data-zone="recovery"><div class="dash-label">RECOVERY LOG - UNSTABLE</div></div>
+      <div class="dash-hotspot" style="top:65%; left:26%; width:40%; height:33%;" onclick="openSidebar('archive-notes')" data-zone="archive-notes"><div class="dash-label">ARCHIVE NOTES - OBSERVATION LOG</div></div>
+    </div>
+    <p class="text-center title-mono fade-in mt-6" style="font-size:0.6rem; letter-spacing:0.22em; color:rgba(200,184,154,0.24);">CATALOG CODE: A-412-A-IV-77 - SPOILER-SAFE SCAN MODE</p>
+  </div>
+</section>
+
+<div id="sidebar-panel">
+  <div class="sidebar-header">
+    <button class="sidebar-close" onclick="closeSidebar()">CLOSE RECORD</button>
+    <div class="title-mono" style="font-size:0.58rem; letter-spacing:0.22em; color:var(--blood-mid); margin-bottom:4px;" id="sb-catalog">CATALOG: -</div>
+    <div class="title-display" style="font-size:0.9rem; color:var(--parchment); letter-spacing:0.14em;" id="sb-title">-</div>
+    <div class="title-mono" style="font-size:0.58rem; letter-spacing:0.18em; color:rgba(200,184,154,0.3); margin-top:4px;" id="sb-status">STATUS: UNKNOWN</div>
+  </div>
+  <div class="sidebar-body"><div class="terminal-output" id="terminal-output"><span class="terminal-line dim visible">// awaiting zone selection...</span></div></div>
+</div>
+<div id="sidebar-backdrop" onclick="closeSidebar()" style="position:fixed; inset:0; background:rgba(0,0,0,0); z-index:199; pointer-events:none; transition:background 0.4s;"></div>
+<footer class="py-20 px-6 text-center" style="border-top:1px solid rgba(201,168,76,0.14); background:linear-gradient(to bottom, #08080A, #050506);">
+  <div style="max-width:760px; margin:0 auto;">
+    <div class="ornament-line mb-6" style="max-width:420px; margin:0 auto 1.5rem;">✦</div>
+    <div class="title-display mb-3" style="font-size:clamp(1.1rem,3vw,1.8rem); letter-spacing:0.22em; color:var(--parchment);">Hyacinth Kaye Bajuyo</div>
+    <div class="title-mono mb-5" style="font-size:0.68rem; letter-spacing:0.28em; color:var(--gold-dim);">AURELIAN SECRETS OF SELENE</div>
+    <p class="title-fell" style="font-style:italic; color:rgba(200,184,154,0.58); font-size:1.05rem; line-height:1.8;">
+      Book One is live now. The bridge is open. The next records remain sealed.
+    </p>
+    <div class="mt-7 flex flex-col sm:flex-row gap-3 justify-center">
+      <a href="https://www.amazon.com/Aurelian-Secrets-Selene-Bridge-Chronicles-ebook/dp/B0H1LLWYWM" target="_blank" class="cta-btn" style="padding:9px 22px; font-size:0.58rem;">Read Book One</a>
+      <a href="#archives" class="cta-btn" style="padding:9px 22px; font-size:0.58rem; background:rgba(201,168,76,0.04);">Join Series Dispatch</a>
+    </div>
+    <div class="privacy-mini">
+      <div class="section-label mb-2">Reader Privacy</div>
+      <p class="title-fell" style="font-size:0.95rem; line-height:1.7; margin:0;">
+        Emails are used only for Aurelian Secrets of Selene series dispatches, release alerts, paperback or physical copy news, reader polls, and occasional author promotions. Readers can unsubscribe anytime.
+      </p>
+    </div>
+    <div class="title-mono mt-8" style="font-size:0.55rem; letter-spacing:0.22em; color:rgba(200,184,154,0.25);">
+      CONCORD ARCHIVE · SPOILER-SAFE SERIES HUB · OFFICIAL READER COMPANION
+    </div>
+  </div>
+</footer>
+
+<!-- ════════════════════════════════════════════════════ -->
+<!-- JAVASCRIPT -->
+<!-- ════════════════════════════════════════════════════ -->
+<script>
+
+// ── SCROLL FADE-IN ──────────────────────────────────────
+const fadeEls = document.querySelectorAll('.fade-in');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), 60);
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.08 });
+fadeEls.forEach(el => observer.observe(el));
+
+// Hero elements
+document.querySelectorAll('#hero .fade-in').forEach((el, i) => {
+  setTimeout(() => el.classList.add('visible'), 300 + i * 180);
+});
+
+
+// ── MAP LORE FRAGMENTS ──────────────────────────────────
+const loreData = {
+  'ancient-bridge': {
+    text: 'Built to connect. Remembered to divide. The threshold box stands where hands once reached. Objects only. Never hands. This was the first law after the blood settled.',
+  },
+  'river-blood': {
+    text: 'What was cast into the river did not dissolve. It accumulated. Those who drank survived. No one asked them if they wished to. The river remembers every name it absorbed.',
+  },
+  'solaria': {
+    text: 'The curse reached the border and found no purchase. Light, growth, and living things — the warmth that Aurelia was stripped of. Some say Solaria\'s protection was not a gift. It was a target.',
+  },
+  'aurelia': {
+    text: 'Preserved without living. The beauty of Aurelia endures because it cannot change. What cannot decay cannot grow. What cannot grow cannot escape what built it.',
+  }
+};
+
+const loreDisplay = document.getElementById('lore-display');
+
+document.querySelectorAll('.map-hotspot').forEach(spot => {
+  const key = spot.dataset.lore;
+  spot.addEventListener('mouseenter', () => {
+    if (loreData[key]) {
+      loreDisplay.innerHTML = `<span style="display:block;font-family:'Cinzel',serif;font-size:0.6rem;letter-spacing:0.2em;color:var(--gold-dim);margin-bottom:8px;font-style:normal;">${key.replace('-',' ').toUpperCase()}</span>${loreData[key].text}`;
+      loreDisplay.style.opacity = '1';
+    }
+  });
+});
+
+
+// ── PASSWORD GATE ───────────────────────────────────────
+const input = document.getElementById('pw-input');
+const gateEmail = document.getElementById('gate-email');
+const unlockNewsletterForm = document.getElementById('unlock-newsletter-form');
+const submitBtn = document.getElementById('pw-submit');
+const errorMsg = document.getElementById('pw-error');
+const lockOverlay = document.getElementById('lock-overlay-b2');
+const revealSection = document.getElementById('book2-reveal');
+const book2ImageZone = document.getElementById('book2-image-zone');
+const book2FullReveal = document.querySelector('.book2-full-reveal');
+const lockedImg = document.getElementById('book2-locked-img');
+const unlockedImg = document.getElementById('book2-unlocked-img');
+
+// Accept the Archive Code delivered in the Series Dispatch welcome email.
+const ACCEPTED = ['prince'];
+
+function attemptUnlock() {
+  const val = input.value.trim().toLowerCase();
+  const email = gateEmail ? gateEmail.value.trim() : '';
+
+  if (gateEmail && !gateEmail.checkValidity()) {
+    gateEmail.reportValidity();
+    errorMsg.textContent = '✗ EMAIL REQUIRED — Join the dispatch before opening the record.';
+    return;
+  }
+
+  if (ACCEPTED.includes(val)) {
+    // SUCCESS
+    if (email) {
+      localStorage.setItem('aurelianBookTwoDispatchEmail', email);
+    }
+    lockOverlay.classList.add('unlocked');
+    revealSection.classList.add('active');
+
+    // Hide the cropped locked strip; the full artwork appears below the dispatch panel.
+    if (book2ImageZone) {
+      book2ImageZone.style.display = 'none';
+    }
+
+    setTimeout(() => {
+      if (book2FullReveal) {
+        book2FullReveal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    }, 450);
+
+    errorMsg.textContent = '';
+  } else {
+    // FAIL
+    input.classList.add('error');
+    errorMsg.textContent = '✗ PASSPHRASE REJECTED — The record does not recognize this entry.';
+    setTimeout(() => {
+      input.classList.remove('error');
+    }, 600);
+    input.value = '';
+    input.focus();
+  }
+}
+
+submitBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  attemptUnlock();
+});
+input.addEventListener('keydown', (e) => {
+  if (e.key === 'Enter') attemptUnlock();
+});
+
+
+// ── EMAIL FORM HANDLER ──────────────────────────────────
+function handleEmailSubmit(e, confirmId) {
+  e.preventDefault();
+  const form = e.target;
+  const confirm = document.getElementById(confirmId);
+
+  // ── Swap this block for real API call to your newsletter provider ──
+  // Example: fetch(form.action, { method:'POST', body: new FormData(form) })
+  //          .then(() => { ... });
+
+  form.style.display = 'none';
+  if (confirm) {
+    confirm.style.display = 'block';
+  }
+
+  if (confirmId === 'gate-dispatch-confirm' && unlockNewsletterForm) {
+    unlockNewsletterForm.classList.remove('archive-code-awake');
+    void unlockNewsletterForm.offsetWidth;
+    unlockNewsletterForm.classList.add('archive-code-awake');
+    setTimeout(() => {
+      unlockNewsletterForm.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      if (input) input.focus({ preventScroll: true });
+    }, 280);
+  }
+}
+
+function handleMailerLiteSubmit(e, confirmId) {
+  e.preventDefault();
+  const form = e.target;
+  const confirm = document.getElementById(confirmId);
+  const button = form.querySelector('button[type="submit"]');
+
+  if (button) {
+    button.disabled = true;
+    button.textContent = 'DISPATCH SENT';
+  }
+
+  HTMLFormElement.prototype.submit.call(form);
+
+  form.style.display = 'none';
+  if (confirm) {
+    confirm.style.display = 'block';
+  }
+}
+
+
+// ── REDACTED TEXT TOGGLE ────────────────────────────────
+document.querySelectorAll('.redacted').forEach(el => {
+  el.addEventListener('click', () => el.classList.toggle('revealed'));
+});
+
+
+// ── GLITCH CHARACTER CYCLING ────────────────────────────
+const GLITCH_CHARS = '▓░█▒▐▌§#@%&*?!0123456789/\\|<>{}[]^~±×÷≠≈∞';
+
+function makeGlitchTitle(el) {
+  if (!el || el.dataset.glitchInit) return;
+  el.dataset.glitchInit = '1';
+  const original = el.textContent;
+
+  let glitchInterval = null;
+
+  const parent = el.closest('.glitch-title');
+  if (!parent) return;
+
+  parent.addEventListener('mouseenter', () => {
+    let tick = 0;
+    glitchInterval = setInterval(() => {
+      let corrupted = '';
+      for (let i = 0; i < original.length; i++) {
+        if (original[i] === ' ' || original[i] === '\n') {
+          corrupted += original[i];
+        } else {
+          // Every 3 ticks, cycle some chars
+          corrupted += (Math.random() < 0.55)
+            ? GLITCH_CHARS[Math.floor(Math.random() * GLITCH_CHARS.length)]
+            : original[i];
+        }
+      }
+      el.textContent = corrupted;
+      tick++;
+      if (tick > 18) {
+        // Snap back gradually
+        el.textContent = original;
+      }
+    }, 55);
+  });
+
+  parent.addEventListener('mouseleave', () => {
+    clearInterval(glitchInterval);
+    el.textContent = original;
+  });
+}
+
+document.querySelectorAll('.glitch-text').forEach(makeGlitchTitle);
+
+
+// ── SOUNDSCAPE SYSTEM ───────────────────────────────────
+// Synthesised ambient audio using Web Audio API (no external files needed)
+let audioCtx = null;
+let activeNodes = [];
+let currentMode = null;
+
+const DIARY_SOLARIA = [
+  '// SOLARIA · PERSONAL LOG · DATE UNRECORDED',
+  '',
+  'It rained again this morning.',
+  'Not the sharp kind — the soft kind, the kind that',
+  'sounds like the world exhaling after holding its breath',
+  'too long.',
+  '',
+  'I pressed my hand to the glass and watched a tulip',
+  'bend under the weight of the water.',
+  'Orange. The colour of a question no one has asked me yet.',
+  '',
+  'The light here is still warm.',
+  'I am trying to remember that warmth is not weakness.',
+  'That growing things must first be broken open.',
+  '',
+  '— Fragment recovered, S. file, pre-crossing.',
+];
+
+const DIARY_AURELIA = [
+  '// AURELIA · RECOVERED FRAGMENT · CLASSIFICATION: RESTRICTED',
+  '',
+  'The wind does not carry anything here.',
+  'It moves without purpose. It arrives without memory.',
+  '',
+  'The trees stand. They have always stood.',
+  'Nothing falls. Nothing is allowed to fall.',
+  '',
+  'I have been told this is preservation.',
+  'I am beginning to understand that preservation',
+  'is only another word for stopped.',
+  '',
+  'What cannot decay cannot choose.',
+  'What cannot choose was never free.',
+  '',
+  '— Provenance unknown. Record flagged: HISTORICAL RISK.',
+];
+
+function buildAmbientNoise(ctx, type) {
+  const nodes = [];
+
+  if (type === 'solaria') {
+    // Rain: filtered white noise
+    const bufferSize = ctx.sampleRate * 3;
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * 0.18;
+
+    const source = ctx.createBufferSource();
+    source.buffer = buffer;
+    source.loop = true;
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'bandpass';
+    filter.frequency.value = 1200;
+    filter.Q.value = 0.4;
+
+    const filter2 = ctx.createBiquadFilter();
+    filter2.type = 'lowpass';
+    filter2.frequency.value = 3000;
+
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    gain.gain.linearRampToValueAtTime(0.28, ctx.currentTime + 2);
+
+    source.connect(filter);
+    filter.connect(filter2);
+    filter2.connect(gain);
+    gain.connect(ctx.destination);
+    source.start();
+    nodes.push(source, filter, filter2, gain);
+
+    // Gentle low drone
+    const osc = ctx.createOscillator();
+    osc.type = 'sine';
+    osc.frequency.value = 82;
+    const oscGain = ctx.createGain();
+    oscGain.gain.value = 0;
+    oscGain.gain.linearRampToValueAtTime(0.04, ctx.currentTime + 3);
+    osc.connect(oscGain);
+    oscGain.connect(ctx.destination);
+    osc.start();
+    nodes.push(osc, oscGain);
+
+  } else {
+    // Wind: multiple oscillators + noise
+    const bufferSize = ctx.sampleRate * 4;
+    const buffer = ctx.createBuffer(1, bufferSize, ctx.sampleRate);
+    const data = buffer.getChannelData(0);
+    for (let i = 0; i < bufferSize; i++) data[i] = (Math.random() * 2 - 1) * 0.12;
+
+    const source = ctx.createBufferSource();
+    source.buffer = buffer;
+    source.loop = true;
+
+    const filter = ctx.createBiquadFilter();
+    filter.type = 'highpass';
+    filter.frequency.value = 600;
+
+    const gain = ctx.createGain();
+    gain.gain.value = 0;
+    gain.gain.linearRampToValueAtTime(0.2, ctx.currentTime + 1.5);
+    source.connect(filter);
+    filter.connect(gain);
+    gain.connect(ctx.destination);
+    source.start();
+    nodes.push(source, filter, gain);
+
+    // Haunting high whistle
+    [440, 523, 392].forEach((freq, i) => {
+      const osc = ctx.createOscillator();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      const og = ctx.createGain();
+      og.gain.value = 0;
+      og.gain.linearRampToValueAtTime(0.022, ctx.currentTime + 2 + i * 0.5);
+      osc.connect(og);
+      og.connect(ctx.destination);
+      osc.start();
+      nodes.push(osc, og);
+    });
+  }
+
+  return nodes;
+}
+
+function stopSoundscape() {
+  if (audioCtx) {
+    // Fade out
+    activeNodes.forEach(n => {
+      if (n.gain) {
+        try { n.gain.linearRampToValueAtTime(0, audioCtx.currentTime + 0.8); } catch(e){}
+      }
+    });
+    setTimeout(() => {
+      try { audioCtx.close(); } catch(e){}
+      audioCtx = null;
+      activeNodes = [];
+    }, 900);
+  }
+
+  // Reset UI
+  document.getElementById('pin-solaria').classList.remove('active');
+  document.getElementById('pin-aurelia').classList.remove('active');
+  document.getElementById('solaria-status').textContent = '▶ ACTIVATE';
+  document.getElementById('aurelia-status').textContent = '▶ ACTIVATE';
+  document.getElementById('stop-btn-wrap').style.display = 'none';
+  document.getElementById('sound-active-bg').style.background = '';
+
+  const diary = document.getElementById('diary-entry');
+  diary.classList.remove('aurelia-mode');
+  diary.innerHTML = '<span style="font-family:\'Share Tech Mono\',monospace;font-size:0.7rem;letter-spacing:0.15em;font-style:normal;">SELECT A MODE TO BEGIN THE DIARY READOUT</span>';
+  currentMode = null;
+}
+
+function activateSoundscape(mode) {
+  if (currentMode === mode) { stopSoundscape(); return; }
+  stopSoundscape();
+
+  // Small delay to allow previous ctx to close
+  setTimeout(() => {
+    currentMode = mode;
+
+    // Start audio
+    try {
+      audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      activeNodes = buildAmbientNoise(audioCtx, mode);
+    } catch(e) { console.warn('Web Audio not available:', e); }
+
+    // Update UI
+    const isSol = mode === 'solaria';
+    const activePinId = isSol ? 'pin-solaria' : 'pin-aurelia';
+    const statusId = isSol ? 'solaria-status' : 'aurelia-status';
+    document.getElementById(activePinId).classList.add('active');
+    document.getElementById(statusId).textContent = '■ PLAYING';
+    document.getElementById('stop-btn-wrap').style.display = 'block';
+
+    const bg = document.getElementById('sound-active-bg');
+    bg.style.background = isSol
+      ? 'radial-gradient(ellipse at 50% 50%, rgba(212,168,85,0.05) 0%, transparent 70%)'
+      : 'radial-gradient(ellipse at 50% 50%, rgba(45,107,74,0.07) 0%, transparent 70%)';
+
+    // Typewriter diary
+    const diary = document.getElementById('diary-entry');
+    diary.innerHTML = '';
+    if (!isSol) diary.classList.add('aurelia-mode');
+    else diary.classList.remove('aurelia-mode');
+
+    const lines = isSol ? DIARY_SOLARIA : DIARY_AURELIA;
+    typewriterLines(diary, lines, isSol ? 'var(--gold)' : 'var(--emerald-bright)');
+  }, 200);
+}
+
+function typewriterLines(container, lines, cursorColor) {
+  // Build all line elements
+  const spans = lines.map(line => {
+    const s = document.createElement('span');
+    s.style.display = 'block';
+    s.style.minHeight = '1.1em';
+    s.style.whiteSpace = 'pre-wrap';
+    container.appendChild(s);
+    return { el: s, text: line };
+  });
+
+  // Add cursor
+  const cur = document.createElement('span');
+  cur.className = 'diary-cursor';
+  cur.style.background = cursorColor;
+  container.appendChild(cur);
+
+  let lineIdx = 0;
+  let charIdx = 0;
+
+  function tick() {
+    if (lineIdx >= spans.length) { cur.remove(); return; }
+    const { el, text } = spans[lineIdx];
+    if (charIdx <= text.length) {
+      el.textContent = text.slice(0, charIdx);
+      charIdx++;
+      setTimeout(tick, text[charIdx - 1] === ' ' ? 28 : 38);
+    } else {
+      lineIdx++;
+      charIdx = 0;
+      setTimeout(tick, 180);
+    }
+  }
+  setTimeout(tick, 400);
+}
+
+
+// ── ARCHIVE DASHBOARD SIDEBAR ───────────────────────────
+const ZONE_DATA = {
+  selene: {
+    catalog: 'CATALOG: A-412-A-IV-77 · SELENE FRAGMENT',
+    title: 'SELENE FRAGMENT — FILE INCOMPLETE',
+    status: 'STATUS: PRESERVATION PRIORITY ACTIVE · RECORD UNSTABLE',
+    lines: [
+      { text: '> INITIATING LEVEL IV BYPASS...', cls: 'dim' },
+      { text: '> ACCESSING SELENE FRAGMENT...', cls: 'dim' },
+      { text: '> FRAGMENT LOCATED. CONDITION: DEGRADED.', cls: 'dim' },
+      { text: '' },
+      { text: '// SUBJECT: SELENE — SOLARIAN AIDE', cls: '' },
+      { text: '// RECORD RECOVERED BY: ARCHIVIST M.', cls: '' },
+      { text: '// LOCATION UNKNOWN. SOURCE UNVERIFIED.', cls: '' },
+      { text: '' },
+      { text: 'Photo degradation: advanced.', cls: 'bright' },
+      { text: 'Stabilization: ongoing.', cls: 'bright' },
+      { text: '' },
+      { text: 'She does not belong in their history.', cls: 'bright' },
+      { text: 'And yet she keeps finding', cls: 'bright' },
+      { text: 'the doors that open for no one else.', cls: 'bright' },
+      { text: '' },
+      { text: '// HANDWRITTEN ANNOTATION:', cls: 'dim' },
+      { text: 'Likely connected to pre-Erasure events.', cls: 'dim' },
+      { text: 'Link severed. — Archivist I.', cls: 'dim' },
+      { text: '' },
+      { text: '> EXPOSURE MAY CAUSE COGNITIVE DISTORTION.', cls: 'blood' },
+      { text: '> OBSERVATIONAL ONLY. VIOLATION PUNISHABLE.', cls: 'blood' },
+      { text: '> BY MEMORY REMOVAL.', cls: 'blood' },
+    ]
+  },
+  concord: {
+    catalog: 'CATALOG: A-412-A-IV-77 · CONCORD SEALED',
+    title: 'RESTRICTED ARCHIVE — ACCESS DENIED',
+    status: 'STATUS: CONCORD SEALED · ARCHIVE FRACTURED',
+    lines: [
+      { text: '> INITIATING BYPASS...', cls: 'dim' },
+      { text: '> WARNING: LEVEL IV RESTRICTION ACTIVE.', cls: 'blood' },
+      { text: '> UNAUTHORIZED ACCESS WILL BE RECORDED.', cls: 'blood' },
+      { text: '' },
+      { text: 'CONCORD SEALED.', cls: '' },
+      { text: 'ACCESS DENIED.', cls: '' },
+      { text: 'LEVEL IV RESTRICTION.', cls: '' },
+      { text: 'ARCHIVE FRACTURED.', cls: '' },
+      { text: '' },
+      { text: 'The following material is classified', cls: 'bright' },
+      { text: 'as dangerous to historical stability.', cls: 'bright' },
+      { text: '' },
+      { text: 'By decree of the Concord Council, 412 A.C.', cls: 'dim' },
+      { text: '' },
+      { text: '// ARCHIVE NOTES:', cls: 'dim' },
+      { text: 'Some names survive only through damage.', cls: 'bright' },
+      { text: 'The record changes depending on who reads it.', cls: 'bright' },
+      { text: 'Several pages were removed before preservation.', cls: 'bright' },
+      { text: '' },
+      { text: 'DO NOT RESTORE THE MISSING SECTION.', cls: 'blood' },
+      { text: '— Archivist I.', cls: 'blood' },
+      { text: '' },
+      { text: '> IF YOU ARE READING THIS,', cls: 'emerald' },
+      { text: '> YOU ARE NOT SUPPOSED TO REMEMBER.', cls: 'emerald' },
+    ]
+  },
+  denovian: {
+    catalog: 'CATALOG: A-412-A-IV-77 · VAULT SECTION B-7',
+    title: 'REMOVED ENTRY — ENTRY EXPUNGED',
+    status: 'STATUS: INACCESSIBLE · ALL REFERENCES REMOVED',
+    lines: [
+      { text: '> SCANNING VAULT SECTION B-7...', cls: 'dim' },
+      { text: '> SUBJECT RECORD LOCATED.', cls: 'dim' },
+      { text: '> RECORD STATUS: EXPUNGED.', cls: 'blood' },
+      { text: '' },
+      { text: 'Name removed under Concord Decree.', cls: '' },
+      { text: 'Record no longer exists.', cls: '' },
+      { text: '' },
+      { text: 'No copies permitted.', cls: 'bright' },
+      { text: 'No echoes permitted.', cls: 'bright' },
+      { text: 'No memory permitted.', cls: 'bright' },
+      { text: '' },
+      { text: 'All references removed by order of', cls: 'dim' },
+      { text: 'the Concord Council — 412 A.C.', cls: 'dim' },
+      { text: '' },
+      { text: '// CONTRADICTORY ACCOUNTS DETECTED.', cls: 'blood' },
+      { text: '// ORIGINAL SOURCE: BOTH VERIFIED AND UNVERIFIED.', cls: 'blood' },
+      { text: '' },
+      { text: 'He moves like shadows think.', cls: 'bright' },
+      { text: 'I can never hold the lines long enough.', cls: 'bright' },
+      { text: '— Archivist I.', cls: 'dim' },
+      { text: '' },
+      { text: '> SUBJECT: BUILT FOR VANISHING.', cls: 'emerald' },
+      { text: '> RECORD PURGED FROM ALL INDEXES.', cls: 'blood' },
+    ]
+  },
+  erasure: {
+    catalog: 'CATALOG: A-412-A-IV-77 · ERASURE LOG',
+    title: 'ERASURE LOG — ORDERED: HIGH SCRIBE V.',
+    status: 'STATUS: COMPLETE · RECORD PURGED',
+    lines: [
+      { text: '> ACCESSING ERASURE LOG...', cls: 'dim' },
+      { text: '> DATE: 412 A.C.', cls: 'dim' },
+      { text: '> ORDERED BY: HIGH SCRIBE V.', cls: 'dim' },
+      { text: '> REASON: HISTORICAL RISK.', cls: 'dim' },
+      { text: '' },
+      { text: 'STATUS: COMPLETE.', cls: 'blood' },
+      { text: 'RECORD PURGED FROM ALL INDEXES.', cls: 'blood' },
+      { text: '' },
+      { text: '// OBSERVATION — I.', cls: '' },
+      { text: 'History is not lost. It is edited.', cls: 'bright' },
+      { text: 'The Concord does not destroy everything.', cls: 'bright' },
+      { text: 'They just decide what reality', cls: 'bright' },
+      { text: 'is allowed to keep.', cls: 'bright' },
+      { text: '' },
+      { text: '// STORAGE: C-3', cls: 'dim' },
+      { text: '// CONDITION: FRAGILE', cls: 'dim' },
+      { text: '// RESTORATION: DENIED', cls: 'dim' },
+      { text: '// REASON: RISK TO STABILITY', cls: 'dim' },
+      { text: '' },
+      { text: '> VERIFIED BY: ████', cls: 'blood' },
+    ]
+  },
+  recovery: {
+    catalog: 'CATALOG: A-412-A-IV-77 · RECOVERY LOG',
+    title: 'RECOVERY LOG — ARCHIVIST M.',
+    status: 'STATUS: FRAGMENTED · CONDITION: UNSTABLE · VERIFIED: NO',
+    lines: [
+      { text: '> RECOVERY LOG · ARCHIVIST M.', cls: 'dim' },
+      { text: '> DATE: 412 A.C.', cls: 'dim' },
+      { text: '' },
+      { text: 'CONDITION: FRAGMENTED.', cls: 'blood' },
+      { text: 'PAGES: INCOMPLETE.', cls: 'blood' },
+      { text: 'DAMAGE: SEVERE SMOKE AND WATER.', cls: 'blood' },
+      { text: 'VERIFIED: NO.', cls: 'blood' },
+      { text: '' },
+      { text: '// STATUS: UNSTABLE', cls: '' },
+      { text: '' },
+      { text: 'Library records are never whole.', cls: 'bright' },
+      { text: 'They are fragments of', cls: 'bright' },
+      { text: 'what should not have been seen.', cls: 'bright' },
+      { text: '— Archivist M.', cls: 'dim' },
+      { text: '' },
+      { text: 'The bridge remembers.', cls: 'bright' },
+      { text: 'The river forgets.', cls: 'bright' },
+      { text: 'But some hearts refuse', cls: 'bright' },
+      { text: 'both fate and forgetting.', cls: 'bright' },
+      { text: '' },
+      { text: '> RECORD: NOT ALL STORIES WERE DESTROYED.', cls: 'emerald' },
+      { text: '> SOME WERE PRESERVED INCORRECTLY.', cls: 'emerald' },
+    ]
+  },
+  'archive-notes': {
+    catalog: 'CATALOG: A-412-A-IV-77 · ARCHIVE NOTES',
+    title: 'ARCHIVE NOTES — OBSERVATION LOG I.',
+    status: 'STATUS: RECORD NO. 77-12-B · SECTION 6 · SUB-LEVEL REDACTED',
+    lines: [
+      { text: '> ACCESSING ARCHIVE NOTES...', cls: 'dim' },
+      { text: '> RECORD NO.: 77-12-B · SECTION: 6', cls: 'dim' },
+      { text: '> LEVEL: IV · SUB-LEVEL: [REDACTED]', cls: 'blood' },
+      { text: '' },
+      { text: 'The original account no longer matches', cls: 'bright' },
+      { text: 'surviving copies.', cls: 'bright' },
+      { text: '' },
+      { text: 'Do not restore the missing section.', cls: 'blood' },
+      { text: '' },
+      { text: '// ARCHIVIST MARGIN NOTES:', cls: 'dim' },
+      { text: 'Some pages show evidence of deliberate removal.', cls: 'bright' },
+      { text: 'Ink analysis suggests information was feared,', cls: 'bright' },
+      { text: 'not forgotten.', cls: 'bright' },
+      { text: '' },
+      { text: '// STORY VOICE MOVED TO CHARACTER DOSSIER.', cls: 'emerald' },
+      { text: '// duplicate fragment suppressed for clarity.', cls: 'dim' },
+      { text: '' },
+      { text: '> REPRODUCTION FORBIDDEN UNDER PENALTY OF LAW.', cls: 'blood' },
+    ]
+  }
+};
+
+let sidebarTypewriterAbort = false;
+
+function openSidebar(zone) {
+  const data = ZONE_DATA[zone];
+  if (!data) return;
+
+  sidebarTypewriterAbort = true;
+  setTimeout(() => {
+    sidebarTypewriterAbort = false;
+    runSidebar(data);
+  }, 80);
+}
+
+function runSidebar(data) {
+  document.getElementById('sb-catalog').textContent = data.catalog;
+  document.getElementById('sb-title').textContent = data.title;
+  document.getElementById('sb-status').textContent = data.status;
+
+  const out = document.getElementById('terminal-output');
+  out.innerHTML = '';
+
+  const panel = document.getElementById('sidebar-panel');
+  panel.classList.add('open');
+
+  const bd = document.getElementById('sidebar-backdrop');
+  bd.style.pointerEvents = 'all';
+  bd.style.background = 'rgba(0,0,0,0.45)';
+
+  // Build line elements
+  const lineEls = data.lines.map(({ text, cls }) => {
+    const el = document.createElement('span');
+    el.className = `terminal-line ${cls}`;
+    el.textContent = text || '\u00A0';
+    out.appendChild(el);
+    return { el, text, cls };
+  });
+
+  // Typewriter reveal line by line
+  let i = 0;
+  function revealNext() {
+    if (sidebarTypewriterAbort || i >= lineEls.length) return;
+    const { el, text } = lineEls[i];
+    i++;
+    // Character-by-character for non-empty lines
+    if (text.trim().length === 0) {
+      el.classList.add('visible');
+      setTimeout(revealNext, 80);
+    } else {
+      el.textContent = '';
+      el.classList.add('visible');
+      let ci = 0;
+      function typeChar() {
+        if (sidebarTypewriterAbort) return;
+        if (ci <= text.length) {
+          el.textContent = text.slice(0, ci) || '\u00A0';
+          ci++;
+          setTimeout(typeChar, 22);
+        } else {
+          setTimeout(revealNext, 60);
+        }
+      }
+      typeChar();
+    }
+  }
+  setTimeout(revealNext, 300);
+}
+
+function closeSidebar() {
+  sidebarTypewriterAbort = true;
+  document.getElementById('sidebar-panel').classList.remove('open');
+  const bd = document.getElementById('sidebar-backdrop');
+  bd.style.pointerEvents = 'none';
+  bd.style.background = 'rgba(0,0,0,0)';
+}
+
+
+// ── CONCORD COUNCIL THREAT LEVEL SYSTEM ─────────────────
+let concordLevel = 1;
+let violationCount = 0;
+
+const CONCORD_MESSAGES = [
+  '',
+  'CONCORD COUNCIL · LEVEL I MONITORING — OBSERVATIONAL ONLY',
+  'CONCORD COUNCIL · LEVEL II SURVEILLANCE — ACTIVITY FLAGGED',
+  'CONCORD COUNCIL · LEVEL III INVESTIGATION — RECORD INSTABILITY DETECTED',
+  'CONCORD COUNCIL · LEVEL IV RESTRICTION — ARCHIVE FRACTURED',
+];
+
+function escalateConcord(toLevel) {
+  if (toLevel <= concordLevel && concordLevel < 4) return;
+  concordLevel = Math.min(4, Math.max(concordLevel, toLevel));
+  const bar = document.getElementById('concord-bar');
+  const txt = document.getElementById('concord-text');
+  bar.className = `level-${concordLevel}`;
+  txt.textContent = CONCORD_MESSAGES[concordLevel];
+
+  const dots = document.querySelectorAll('.concord-dot');
+  dots.forEach((d, i) => {
+    d.className = 'concord-dot';
+    const dotLevel = Math.ceil((i + 1) / 2);
+    if (dotLevel <= concordLevel) {
+      setTimeout(() => d.classList.add(concordLevel >= 3 ? 'lit-blood' : 'lit'), i * 120);
+    }
+  });
+}
+
+function triggerFlash(duration) {
+  duration = duration || 600;
+  const fl = document.getElementById('flash-overlay');
+  fl.classList.add('flash');
+  setTimeout(() => fl.classList.remove('flash'), duration);
+}
+
+// Watch password failures
+document.getElementById('pw-submit').addEventListener('click', function() {
+  const val = document.getElementById('pw-input').value.trim().toLowerCase();
+  if (!ACCEPTED.includes(val) && val.length > 0) {
+    violationCount++;
+    if (violationCount >= 3) escalateConcord(4);
+    else if (violationCount >= 2) escalateConcord(3);
+    else escalateConcord(2);
+  }
+}, true);
+
+// Watch archive zone clicks escalate level 2
+document.querySelectorAll('.dash-hotspot').forEach(el => {
+  el.addEventListener('click', () => {
+    if (concordLevel < 2) escalateConcord(2);
+  });
+});
+
+
+// ── RIVER OF BLOOD PARALLAX ──────────────────────────────
+(function initRiverParallax() {
+  const dividers = document.querySelectorAll('.river-divider');
+
+  function onScroll() {
+    dividers.forEach(div => {
+      const speed = parseFloat(div.dataset.parallax || 0.4);
+      const inner = div.querySelector('.river-inner');
+      if (!inner) return;
+      const rect = div.getBoundingClientRect();
+      const offset = (rect.top + rect.height / 2 - window.innerHeight / 2) * speed * -0.5;
+      inner.style.transform = 'translateY(' + offset + 'px)';
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Fade in on scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transition = 'opacity 1.4s ease';
+      }
+    });
+  }, { threshold: 0.05 });
+
+  dividers.forEach(d => { d.style.opacity = '0'; obs.observe(d); });
+})();
+
+// ── ARCHIVE BOOT SEQUENCE ───────────────────────────────
+const BOOT_LINES = [
+  { text: '> INITIALIZING CONCORD ARCHIVE TERMINAL v.412.A ...', cls: 'col-dim',    delay: 0   },
+  { text: '> ESTABLISHING ENCRYPTED CHANNEL ...', cls: 'col-dim',                   delay: 280 },
+  { text: '> WARNING: CONNECTION IS UNAUTHORIZED.', cls: 'col-blood',               delay: 520 },
+  { text: '', cls: 'col-dim',                                                        delay: 650 },
+  { text: '> BYPASSING CONCORD LEVEL IV FIREWALL ...', cls: 'col-warn',             delay: 700 },
+  { text: '> AUTHENTICATION: FAILED — RETRYING ...', cls: 'col-blood',              delay: 980 },
+  { text: '> AUTHENTICATION: FAILED — REROUTING ...', cls: 'col-blood',             delay: 1160},
+  { text: '> AUTHENTICATION: BYPASSED (UNAUTHORIZED)', cls: 'col-warn',             delay: 1400},
+  { text: '', cls: 'col-dim',                                                        delay: 1480},
+  { text: '> LOCATING ARCHIVE CATALOG A-412-A-IV-77 ...', cls: 'col-dim',           delay: 1540},
+  { text: '> RECORD STATUS: CONCORD SEALED · ARCHIVE FRACTURED', cls: 'col-blood',  delay: 1780},
+  { text: '> OVERRIDE APPLIED. ACCESSING RESTRICTED SHELVES ...', cls: 'col-warn',  delay: 2020},
+  { text: '', cls: 'col-dim',                                                        delay: 2160},
+  { text: '> LOADING SUBJECT: SELENE — FILE INCOMPLETE', cls: 'col-gold',           delay: 2220},
+  { text: '> LOADING SUBJECT: [REDACTED] — ENTRY EXPUNGED', cls: 'col-gold',        delay: 2420},
+  { text: '> LOADING CARTOGRAPHIC FRAGMENT: SOLARIA / AURELIA', cls: 'col-gold',    delay: 2620},
+  { text: '', cls: 'col-dim',                                                        delay: 2740},
+  { text: '> NOTE: THE BRIDGE REMEMBERS WHOSE BLOOD BUILT IT.', cls: 'col-emerald', delay: 2800},
+  { text: '', cls: 'col-dim',                                                        delay: 2940},
+  { text: '> IF YOU ARE READING THIS, YOU ARE NOT SUPPOSED TO REMEMBER.', cls: 'col-blood', delay: 3000},
+  { text: '', cls: 'col-dim',                                                        delay: 3180},
+  { text: '> ARCHIVE OPEN. PROCEED WITH CAUTION.', cls: 'col-white',                delay: 3260},
+];
+
+const TOTAL_BOOT_DURATION = 4200; // ms before auto-dismiss
+let bootDone = false;
+
+function skipBoot() {
+  if (bootDone) return;
+  bootDone = true;
+  dismissBoot();
+}
+
+function dismissBoot() {
+  const bs = document.getElementById('boot-screen');
+  bs.classList.add('fade-out');
+  document.body.style.overflow = '';
+  setTimeout(() => bs.classList.add('gone'), 700);
+}
+
+function runBoot() {
+  document.body.style.overflow = 'hidden';
+  const output = document.getElementById('boot-output');
+  const progressBar = document.getElementById('boot-progress-bar');
+
+  BOOT_LINES.forEach(({ text, cls, delay }) => {
+    setTimeout(() => {
+      if (bootDone) return;
+      const span = document.createElement('span');
+      span.className = 'boot-line ' + cls;
+      span.textContent = text || '\u00A0';
+      output.appendChild(span);
+      requestAnimationFrame(() => span.classList.add('visible'));
+
+      // Scroll to bottom
+      output.scrollTop = output.scrollHeight;
+
+      // Progress
+      const pct = Math.min(100, Math.round((delay / TOTAL_BOOT_DURATION) * 100));
+      progressBar.style.width = pct + '%';
+    }, delay);
+  });
+
+  // Final progress to 100% and dismiss
+  setTimeout(() => {
+    progressBar.style.width = '100%';
+  }, TOTAL_BOOT_DURATION - 400);
+
+  setTimeout(() => {
+    if (!bootDone) { bootDone = true; dismissBoot(); }
+  }, TOTAL_BOOT_DURATION);
+}
+
+// Boot preloader disabled so readers land directly on the hero.
+
+
+</script>
+</body>
+</html>
